@@ -1,0 +1,88 @@
+[
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "unknown",
+            "cache": "n",
+            "hosted_env": "unknown",
+            "key_name": "filipe-test",
+            "model": "claude-3-5-haiku-20241022-v1:0",
+            "platform": "bedrock",
+            "provider": "anthropic",
+            "region": "us-west-2",
+            "sku": "anthropic.claude-3-5-haiku-20241022-v1:0",
+            "tier": "n",
+            "usecase": "acompletion",
+            "user": "default_user_id"
+        },
+        "meterApiName": "llm_api_call",
+        "meterTimeInMillis": 1761767787378,
+        "meterValue": 1,
+        "uniqueId": "chatcmpl-eb9a0e70-588d-4b9d-b850-eb56381d2bd2"
+    },
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "unknown",
+            "cache": "n",
+            "hosted_env": "unknown",
+            "key_name": "filipe-test",
+            "model": "claude-3-5-haiku-20241022-v1:0",
+            "platform": "bedrock",
+            "provider": "anthropic",
+            "region": "us-west-2",
+            "sku": "anthropic.claude-3-5-haiku-20241022-v1:0",
+            "tier": "n",
+            "usecase": "acompletion",
+            "user": "default_user_id"
+        },
+        "meterApiName": "llm_api_call_ms",
+        "meterTimeInMillis": 1761767787378,
+        "meterValue": 2895,
+        "uniqueId": "chatcmpl-eb9a0e70-588d-4b9d-b850-eb56381d2bd2"
+    },
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "unknown",
+            "cache": "n",
+            "hosted_env": "unknown",
+            "key_name": "filipe-test",
+            "model": "claude-3-5-haiku-20241022-v1:0",
+            "platform": "bedrock",
+            "provider": "anthropic",
+            "region": "us-west-2",
+            "sku": "anthropic.claude-3-5-haiku-20241022-v1:0",
+            "tier": "n",
+            "type": "in",
+            "usecase": "acompletion",
+            "user": "default_user_id"
+        },
+        "meterApiName": "llm_text_tokens",
+        "meterTimeInMillis": 1761767787378,
+        "meterValue": 11,
+        "uniqueId": "chatcmpl-eb9a0e70-588d-4b9d-b850-eb56381d2bd2"
+    },
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "unknown",
+            "cache": "n",
+            "hosted_env": "unknown",
+            "key_name": "filipe-test",
+            "model": "claude-3-5-haiku-20241022-v1:0",
+            "platform": "bedrock",
+            "provider": "anthropic",
+            "region": "us-west-2",
+            "sku": "anthropic.claude-3-5-haiku-20241022-v1:0",
+            "tier": "n",
+            "type": "out",
+            "usecase": "acompletion",
+            "user": "default_user_id"
+        },
+        "meterApiName": "llm_text_tokens",
+        "meterTimeInMillis": 1761767787378,
+        "meterValue": 106,
+        "uniqueId": "chatcmpl-eb9a0e70-588d-4b9d-b850-eb56381d2bd2"
+    }
+]

@@ -1,0 +1,104 @@
+{
+    "api_base": "",
+    "cache_hit": false,
+    "cache_key": null,
+    "call_type": "acompletion",
+    "completionStartTime": 1761766308.158997,
+    "completion_tokens": 0,
+    "cost_breakdown": null,
+    "custom_llm_provider": null,
+    "endTime": 1761766308.158997,
+    "end_user": "",
+    "error_information": {
+        "error_class": "ProxyModelNotFoundError",
+        "error_code": "400",
+        "error_message": "400: {'error': '/chat/completions: Invalid model name passed in model=gpt-4. Call `/v1/models` to view available models for your key.'}",
+        "llm_provider": "",
+        "traceback": "  File \"/usr/lib/python3.13/site-packages/litellm/proxy/proxy_server.py\", line 4428, in chat_completion\n    result = await base_llm_response_processor.base_process_llm_request(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<16 lines>...\n    )\n    ^\n  File \"/usr/lib/python3.13/site-packages/litellm/proxy/common_request_processing.py\", line 462, in base_process_llm_request\n    llm_call = await route_request(\n               ^^^^^^^^^^^^^^^^^^^^\n    ...<4 lines>...\n    )\n    ^\n  File \"/usr/lib/python3.13/site-packages/litellm/proxy/route_llm_request.py\", line 196, in route_request\n    raise ProxyModelNotFoundError(\n    ...<2 lines>...\n    )\n"
+    },
+    "error_str": "400: {'error': '/chat/completions: Invalid model name passed in model=gpt-4. Call `/v1/models` to view available models for your key.'}",
+    "guardrail_information": null,
+    "hidden_params": {
+        "additional_headers": null,
+        "api_base": null,
+        "batch_models": null,
+        "cache_key": null,
+        "litellm_model_name": null,
+        "litellm_overhead_time_ms": null,
+        "model_id": null,
+        "response_cost": null,
+        "usage_object": null
+    },
+    "id": "3939d3cf-a012-42d9-ab75-e87b1b2930de",
+    "messages": [
+        {
+            "content": "redacted-by-litellm",
+            "role": "user"
+        }
+    ],
+    "metadata": {
+        "applied_guardrails": [],
+        "cold_storage_object_key": null,
+        "mcp_tool_call_metadata": null,
+        "prompt_management_metadata": null,
+        "requester_custom_headers": {},
+        "requester_ip_address": "",
+        "requester_metadata": {},
+        "spend_logs_metadata": null,
+        "usage_object": {
+            "completion_tokens": 0,
+            "completion_tokens_details": null,
+            "prompt_tokens": 0,
+            "prompt_tokens_details": null,
+            "total_tokens": 0
+        },
+        "user_api_key_alias": "filipe-test",
+        "user_api_key_auth_metadata": {},
+        "user_api_key_budget_reset_at": null,
+        "user_api_key_end_user_id": null,
+        "user_api_key_hash": "358f6a4022698a9c77dc2a4e551b04e08da9a3c541d8e8828617dd898f1d658f",
+        "user_api_key_max_budget": null,
+        "user_api_key_org_id": null,
+        "user_api_key_request_route": "/v1/chat/completions",
+        "user_api_key_spend": 0.0008350000000000002,
+        "user_api_key_team_alias": null,
+        "user_api_key_team_id": null,
+        "user_api_key_user_email": null,
+        "user_api_key_user_id": "default_user_id",
+        "vector_store_request_metadata": null
+    },
+    "model": "gpt-4",
+    "model_group": "",
+    "model_id": "",
+    "model_map_information": {
+        "model_map_key": "",
+        "model_map_value": null
+    },
+    "model_parameters": {},
+    "prompt_tokens": 0,
+    "request_tags": [
+        "User-Agent: curl",
+        "User-Agent: curl/7.88.1"
+    ],
+    "requester_ip_address": "",
+    "response": {
+        "text": "redacted-by-litellm"
+    },
+    "response_cost": 0.0,
+    "response_cost_failure_debug_info": null,
+    "response_time": 0.0030181407928466797,
+    "saved_cache_cost": 0.0,
+    "standard_built_in_tools_params": {
+        "file_search": null,
+        "web_search_options": null
+    },
+    "startTime": 1761766308.155979,
+    "status": "failure",
+    "status_fields": {
+        "guardrail_status": "not_run",
+        "llm_api_status": "failure"
+    },
+    "stream": null,
+    "total_tokens": 0,
+    "trace_id": "81f82636-af4b-40f7-aba7-b5bfc173eeaa"
+}

@@ -1,0 +1,17 @@
+# https://docs.litellm.ai/docs/proxy/config_settings
+litellm_settings:
+  json_logs: false
+  set_verbose: false
+  turn_off_message_logging: true
+
+  # https://docs.litellm.ai/docs/completion/drop_params
+  drop_params: true
+
+  callbacks:
+    - "amberflo.litellm.callback"
+
+general_settings:
+  port: 4000
+  database_url: os.environ/DATABASE_URL
+  store_model_in_db: true
+  use_client_credentials_pass_through_routes: true
