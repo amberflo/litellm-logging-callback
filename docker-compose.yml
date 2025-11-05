@@ -1,0 +1,62 @@
+# Use this docker compose file to set up the LiteLLM service for development.
+#
+# Run database in the background
+#
+#   docker compose up -d postgres
+#
+# Build image and run litellm in the foreground
+#
+#   docker compose up --build litellm
+#
+# press 'w' to enable automatic rebuild and restart of the litellm container on code changes
+
+services:
+
+  postgres:
+    image: postgres:17
+    ports:
+      - 6000:5432
+    environment:
+      - POSTGRES_PASSWORD=dbpassword
+      - POSTGRES_USER=dbuser
+      - POSTGRES_DB=dbname
+    command: ["postgres", "-c", "log_statement=all"]
+    # Persist database data on host machine so one does not need to reconfigure LiteLLM
+    volumes:
+      - ../.pg/litellm/postgres-data:/var/lib/postgresql/data
+
+  litellm:
+    image: ghcr.io/berriai/litellm:v1.79.0-stable
+    develop:
+      watch:
+        - action: restart
+          path: amberflo/
+        - action: restart
+          path: litellm-config.yaml
+    command: --config /app/litellm-config.yaml
+    ports:
+      - 4000:4000
+    volumes:
+      - ./amberflo:/app/amberflo:ro
+      - ./litellm-config.yaml:/app/litellm-config.yaml:ro
+    environment:
+      - DATABASE_URL=postgresql://dbuser:dbpassword@postgres:5432/dbname
+      - LITELLM_MASTER_KEY=master-key
+      - LITELLM_SALT_KEY=salt-key
+      #
+      - AFLO_HOSTED_ENV=local-dev
+      - AFLO_JSON_LOGS=false
+      - AFLO_DEBUG=true
+      - AFLO_BATCH_SIZE=5
+      - AFLO_FLUSH_INTERVAL=20
+      - AFLO_MAX_BUFFER_SIZE=10000 # optional
+    env_file:
+      # AWS_ACCESS_KEY_ID=...
+      # AWS_SECRET_ACCESS_KEY=...
+      # AWS_REGION=...
+      # AZURE_STORAGE_CONNECTION_STRING=...
+      # AFLO_BACKEND_TYPE=...
+      # AFLO_BUCKET_NAME=...
+      # AFLO_CONTAINER_NAME=...
+      # AFLO_PATH=...
+      - .env

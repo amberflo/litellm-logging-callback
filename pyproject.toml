@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aflo-ai-gateway"
+version = "1.0.0"
+description = "Amberflo logging callback for LiteLLM"
+authors = [{name = "Aflo AI Gateway Team"}]
+requires-python = ">=3.11"
+dependencies = [
+    "boto3",
+    "litellm",
+    "azure-storage-blob",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "pyright",
+    "pre-commit",
+    "yamllint",
+]

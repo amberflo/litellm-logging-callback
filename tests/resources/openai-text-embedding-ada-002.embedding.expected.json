@@ -1,0 +1,66 @@
+[
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "unknown",
+            "cache": "n",
+            "hosted_env": "unknown",
+            "key_name": "filipe-test",
+            "model": "text-embedding-ada-002",
+            "platform": "openai",
+            "provider": "openai",
+            "region": "global",
+            "sku": "text-embedding-ada-002-v2",
+            "tier": "n",
+            "usecase": "aembedding",
+            "user": "default_user_id"
+        },
+        "meterApiName": "llm_api_call",
+        "meterTimeInMillis": 1761766619152,
+        "meterValue": 1,
+        "uniqueId": "1d19c8eb-c6b4-464e-baee-218121519a0f"
+    },
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "unknown",
+            "cache": "n",
+            "hosted_env": "unknown",
+            "key_name": "filipe-test",
+            "model": "text-embedding-ada-002",
+            "platform": "openai",
+            "provider": "openai",
+            "region": "global",
+            "sku": "text-embedding-ada-002-v2",
+            "tier": "n",
+            "usecase": "aembedding",
+            "user": "default_user_id"
+        },
+        "meterApiName": "llm_api_call_ms",
+        "meterTimeInMillis": 1761766619152,
+        "meterValue": 2231,
+        "uniqueId": "1d19c8eb-c6b4-464e-baee-218121519a0f"
+    },
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "unknown",
+            "cache": "n",
+            "hosted_env": "unknown",
+            "key_name": "filipe-test",
+            "model": "text-embedding-ada-002",
+            "platform": "openai",
+            "provider": "openai",
+            "region": "global",
+            "sku": "text-embedding-ada-002-v2",
+            "tier": "n",
+            "type": "in",
+            "usecase": "aembedding",
+            "user": "default_user_id"
+        },
+        "meterApiName": "llm_text_tokens",
+        "meterTimeInMillis": 1761766619152,
+        "meterValue": 9,
+        "uniqueId": "1d19c8eb-c6b4-464e-baee-218121519a0f"
+    }
+]
