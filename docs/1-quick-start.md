@@ -38,8 +38,8 @@ litellm_settings:
 Review [Amberflo callback configuration](./2-aflo-config.md)
 
 Set the environment variables following the templates in order to configure secrets and other options:
-- [s3.env.template](./s3.env.template)
-- [azure-blob.env.template](./azure-blob.env.template)
+- [s3.env.template](../s3.env.template)
+- [azure-blob.env.template](../azure-blob.env.template)
 
 ## 4. Run in Docker
 The following Docker command assumes LiteLLM config, env file, and Amberflo package are in the current directory. If not, update the paths accordingly. 
@@ -59,7 +59,7 @@ docker run \
 You can copy your .env file into a secret. Use `stringData` for readability (Kubernetes will base64-encode at apply time). Replace values with your real secrets.
 
 #### 5.1.a. S3 Secret
-Copy [s3.env.template](./s3.env.template) file into secret. 
+Copy [s3.env.template](../s3.env.template) file into secret. 
 
 ```yaml
 apiVersion: v1
@@ -83,7 +83,7 @@ stringData:
 ```
 
 #### 5.1.b. Azure Blob Secret
-Copy [s3.env.template](./s3.env.template) file into secret. 
+Copy [s3.env.template](../s3.env.template) file into secret. 
 
 ```yaml
 apiVersion: v1
