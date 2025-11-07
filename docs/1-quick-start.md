@@ -20,6 +20,11 @@ Review LiteLLM deploy instructions https://docs.litellm.ai/docs/proxy/deploy
 ### Supported LiteLLM Docker image
 `ghcr.io/berriai/litellm:v1.79.0-stable`
 
+### Integration options
+1. Request Amberflo to provision an S3 bucket for you
+2. You provision an S3 bucket and grant Amberflo access 
+3. You provision an Azure Blob container and grant Amberflo access
+
 ## 1. Download
 Download the latest Amberflo callback package `amberflo.zip`, a packaged Python code which is mounted as a LiteLLM callback, from
 https://github.com/amberflo/litellm-logging-callback/releases
