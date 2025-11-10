@@ -1,0 +1,88 @@
+[
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "marketing",
+            "cache": "n",
+            "hosted_env": "unknown",
+            "key_name": "filipe-test-5",
+            "model": "gpt-4o",
+            "platform": "openai",
+            "provider": "openai",
+            "region": "global",
+            "sku": "gpt-4o-2024-08-06",
+            "tier": "n",
+            "usecase": "acompletion",
+            "user": "unknown"
+        },
+        "meterApiName": "llm_api_call",
+        "meterTimeInMillis": 1762788388842,
+        "meterValue": 1,
+        "uniqueId": "chatcmpl-CaO4kqYF9QQstRRWGTCFEEy9XmKZf"
+    },
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "marketing",
+            "cache": "n",
+            "hosted_env": "unknown",
+            "key_name": "filipe-test-5",
+            "model": "gpt-4o",
+            "platform": "openai",
+            "provider": "openai",
+            "region": "global",
+            "sku": "gpt-4o-2024-08-06",
+            "tier": "n",
+            "usecase": "acompletion",
+            "user": "unknown"
+        },
+        "meterApiName": "llm_api_call_ms",
+        "meterTimeInMillis": 1762788388842,
+        "meterValue": 2253,
+        "uniqueId": "chatcmpl-CaO4kqYF9QQstRRWGTCFEEy9XmKZf"
+    },
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "marketing",
+            "cache": "n",
+            "hosted_env": "unknown",
+            "key_name": "filipe-test-5",
+            "model": "gpt-4o",
+            "platform": "openai",
+            "provider": "openai",
+            "region": "global",
+            "sku": "gpt-4o-2024-08-06",
+            "tier": "n",
+            "type": "in",
+            "usecase": "acompletion",
+            "user": "unknown"
+        },
+        "meterApiName": "llm_text_tokens",
+        "meterTimeInMillis": 1762788388842,
+        "meterValue": 11,
+        "uniqueId": "chatcmpl-CaO4kqYF9QQstRRWGTCFEEy9XmKZf"
+    },
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "marketing",
+            "cache": "n",
+            "hosted_env": "unknown",
+            "key_name": "filipe-test-5",
+            "model": "gpt-4o",
+            "platform": "openai",
+            "provider": "openai",
+            "region": "global",
+            "sku": "gpt-4o-2024-08-06",
+            "tier": "n",
+            "type": "out",
+            "usecase": "acompletion",
+            "user": "unknown"
+        },
+        "meterApiName": "llm_text_tokens",
+        "meterTimeInMillis": 1762788388842,
+        "meterValue": 2,
+        "uniqueId": "chatcmpl-CaO4kqYF9QQstRRWGTCFEEy9XmKZf"
+    }
+]

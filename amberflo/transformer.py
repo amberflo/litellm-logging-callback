@@ -25,7 +25,7 @@ def extract_events_from_log(log):
     request_time_ms = round(log["startTime"] * 1000)
     request_duration_ms = round((log["endTime"] - log["startTime"]) * 1000)
 
-    business_unit_id = metadata.get("user_api_key_team_alias") or _unknown
+    business_unit_id = _get_business_unit_id(metadata) or _unknown
 
     provider, model = _resolve_provider_model(log)
 
@@ -113,6 +113,16 @@ def _resolve_region(platform, log):
         return _get_api_base_domain_part(log, 0)
 
     return None
+
+
+def _get_business_unit_id(metadata):
+    """
+    We support two conventions:
+    1. Set the `business_unit_id` as a custom metadata in the User or Team objects.
+    2. Set the Team ID to be the `business_unit_id`
+    """
+    buid = metadata.get("user_api_key_auth_metadata", {}).get("business_unit_id")
+    return buid or metadata.get("user_api_key_team_id")
 
 
 def _get_api_base_domain_part(log, index):
