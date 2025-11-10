@@ -37,6 +37,8 @@ class TestTransformer(unittest.TestCase):
             "bedrock-anthropic-claude-haiku.completion",
             "openai-gpt-4o.completion",
             "openai-text-embedding-ada-002.embedding",
+            "openai-team-key-a.completion",
+            "openai-team-key-b.completion",
         ]
 
         for case in cases:
