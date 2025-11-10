@@ -54,6 +54,12 @@ All prompt tokens map to meter dimension `"type": "in"`
 
 ## Dimension Mapping
 
+### `business_unit_id`
+
+This Business Unit ID value is taken from the custom Team metadata, `business_unit_id`, exposed in the log field `metadata.user_api_key_auth_metadata`. This can be set when editting the Team in the LiteLLM UI.
+
+If this metadata is not set, then the Team ID, exposed in the log field `metadata.user_api_key_team_id`, is used).
+
 ### Core Dimensions
 
 | LiteLLM Log Field | Amberflo Dimension | Description |
@@ -63,7 +69,6 @@ All prompt tokens map to meter dimension `"type": "in"`
 | `model` | `model` | Model identifier |
 | `model_map_information.model_map_key` | `sku` | Specific model SKU/version identifier |
 | `user` | `user` | End user identifier |
-| `metadata.user_api_key_team_alias` | `business_unit_id` | Team/organization identifier |
 | `metadata.user_api_key_alias` | `keyName` | API key name |
 
 ### Token Type Dimension
