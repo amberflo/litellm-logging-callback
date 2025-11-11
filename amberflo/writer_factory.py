@@ -13,22 +13,27 @@ def build_writer() -> AsyncEventsWriter:
     variable.
     """
 
-    storage_type = get_env("AFLO_BACKEND_TYPE", default="s3").lower()
+    backend = get_env("AFLO_BACKEND_TYPE", default="s3").lower()
 
-    logger.info("Building writer for: %s", storage_type)
+    logger.info("Building writer for: %s", backend)
 
-    if storage_type == "s3":
+    if backend == "api":
+        from .api_client import ApiClient
+
+        client = ApiClient()
+
+    elif backend == "s3":
         from .s3_client import S3Client
 
         client = S3Client()
 
-    elif storage_type in ("azure", "azure-blob"):
+    elif backend in ("azure", "azure-blob"):
         from .azure_blob_client import AzureBlobClient
 
         client = AzureBlobClient()
 
     else:
-        raise ValueError(f"Unsupported 'storage type': {storage_type}")
+        raise ValueError(f"Unsupported AFLO_BACKEND_TYPE: {backend}")
 
     max_buffer_size = int(get_env("AFLO_MAX_BUFFER_SIZE", 10000, validate=positive_int))
 
