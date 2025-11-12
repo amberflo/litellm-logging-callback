@@ -23,8 +23,8 @@ class TestUtilsGetEnv(unittest.TestCase):
 
     @patch.dict(os.environ, {})
     def test_key_no_exists_required_with_default(self):
-        with self.assertRaises(ValueError):
-            get_env("KEY", "default", required=True)
+        value = get_env("KEY", "default", required=True)
+        self.assertEqual(value, "default")
 
     @patch.dict(os.environ, {"KEY": "10"})
     def test_key_positive_int(self):

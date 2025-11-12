@@ -22,7 +22,7 @@ def positive_int(key, x: str) -> int:
 def get_env(key, default=None, validate=None, required=False):
     x = os.getenv(key, "")
 
-    if not x and required:
+    if not x and not default and required:
         raise ValueError(f"{key} must be set")
 
     if x and validate:

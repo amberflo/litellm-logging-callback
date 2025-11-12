@@ -7,7 +7,10 @@ Amberflo can write meter events either to an AWS S3 bucket or Azure Blob contain
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
 | **Backend Selection** | | | |
-| `AFLO_BACKEND_TYPE` | Yes | `s3` | Storage backend type. Valid values: `s3`, `azure-blob` |
+| `AFLO_BACKEND_TYPE` | Yes | `s3` | Storage backend type. Valid values: `api`, `s3`, `azure-blob` |
+| **Amberflo API Configuration** | | | |
+| `AFLO_API_KEY` | Yes (for API) | - | Amberflo API key |
+| `AFLO_API_ENDPOINT` | No | `https://ingest.amberflo.io` | Amberflo ingest API endpoint |
 | **AWS S3 Configuration** | | | |
 | `AWS_ACCESS_KEY_ID` | Yes (for S3) | - | AWS access key ID for S3 authentication |
 | `AWS_SECRET_ACCESS_KEY` | Yes (for S3) | - | AWS secret access key for S3 authentication |
@@ -24,6 +27,19 @@ Amberflo can write meter events either to an AWS S3 bucket or Azure Blob contain
 | `AFLO_BATCH_SIZE` | No | `100` | Number of events to batch before writing |
 | `AFLO_FLUSH_INTERVAL` | No | `300` | Interval in seconds to flush events (5 minutes) |
 | `AFLO_MAX_BUFFER_SIZE` | No | `10000` | Maximum number of events to buffer in memory |
+
+### API env file
+```YAML
+AFLO_BACKEND_TYPE=api
+AFLO_API_KEY=...
+AFLO_API_ENDPOINT=https://ingest.amberflo.io
+AFLO_HOSTED_ENV=prod
+AFLO_JSON_LOGS=false
+AFLO_DEBUG=false
+AFLO_BATCH_SIZE=100
+AFLO_FLUSH_INTERVAL=300 # 5 minutes
+AFLO_MAX_BUFFER_SIZE=10000 # optional
+```
 
 ### AWS S3 env file
 ```YAML
