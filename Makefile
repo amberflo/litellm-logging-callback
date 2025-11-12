@@ -6,7 +6,7 @@ setup: setup-python
 
 setup-python:
 	python3 -m virtualenv .venv
-	.venv/bin/pip install litellm boto3 azure-storage-blob tenacity=8.5.0
+	.venv/bin/pip install litellm boto3 azure-storage-blob tenacity==8.5.0
 	.venv/bin/pip install ruff pyright yamllint pre-commit
 
 lint: lint-python lint-shell lint-yaml

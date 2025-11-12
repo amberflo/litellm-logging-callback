@@ -16,7 +16,7 @@ logger = get_logger(__name__)
 
 class ApiClient(BlobWriter):
     """
-    Wrapper around the AWS S3 client.
+    API client for sending data to Amberflo's ingestion endpoint.
     """
 
     def __init__(
@@ -24,9 +24,9 @@ class ApiClient(BlobWriter):
         api_key=None,
         endpoint="https://ingest.amberflo.io",
     ):
-        self.endpoint = get_env("AFLO_API_ENDPOINT", endpoint, required=True)
+        self.endpoint = get_env("AFLO_API_ENDPOINT", default=endpoint)
 
-        api_key = get_env("AFLO_API_KEY", api_key, required=True)
+        api_key = get_env("AFLO_API_KEY", default=api_key, required=True)
 
         headers = {"x-api-key": api_key, "Content-Encoding": "gzip"}
 
@@ -56,12 +56,10 @@ class ApiClient(BlobWriter):
             else:
                 response = await r.text()
 
+                error = f"API call failed for key: {key}: {status}, {response}"
+
                 # retry only on server errors
                 if status < 500:
-                    logger.error(
-                        "API call failed for key: %s: %s, %s", key, status, response
-                    )
+                    logger.error(error)
                 else:
-                    raise RuntimeError(
-                        "API call failed for key: %s: %s, %s", key, status, response
-                    )
+                    raise RuntimeError(error)
