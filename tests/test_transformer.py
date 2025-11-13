@@ -39,7 +39,6 @@ class TestTransformer(unittest.TestCase):
             "openai-text-embedding-ada-002.embedding",
             "openai-team-key-a.completion",
             "openai-team-key-b.completion",
-
             # error cases
             "disabled-model.completion",
             "api-key-rate-limit.completion",

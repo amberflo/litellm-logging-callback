@@ -94,13 +94,21 @@ def extract_events_from_log(log):
             **base_event,
             "meterApiName": "llm_api_call",
             "meterValue": 1,
-            "dimensions": { **dimensions, **pricing_dimensions, "error_code": error_code }
+            "dimensions": {
+                **dimensions,
+                **pricing_dimensions,
+                "error_code": error_code,
+            },
         },
         {
             **base_event,
             "meterApiName": "llm_api_call_ms",
             "meterValue": request_duration_ms,
-            "dimensions": { **dimensions, **pricing_dimensions, "error_code": error_code }
+            "dimensions": {
+                **dimensions,
+                **pricing_dimensions,
+                "error_code": error_code,
+            },
         },
     ]
 
@@ -110,7 +118,12 @@ def extract_events_from_log(log):
                 **base_event,
                 "meterApiName": _get_meter_name(unit),
                 "meterValue": quantity,
-                "dimensions": { **dimensions, **pricing_dimensions, "type": in_out, "cache": cache },
+                "dimensions": {
+                    **dimensions,
+                    **pricing_dimensions,
+                    "type": in_out,
+                    "cache": cache,
+                },
             }
         )
 
@@ -120,7 +133,7 @@ def extract_events_from_log(log):
                 **base_event,
                 "meterApiName": "llm_error_details",
                 "meterValue": 1,
-                "dimensions": { **dimensions, **error_details }
+                "dimensions": {**dimensions, **error_details},
             }
         )
 
