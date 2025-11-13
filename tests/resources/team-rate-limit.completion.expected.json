@@ -3,7 +3,6 @@
         "dimensions": {
             "batch": "n",
             "business_unit_id": "team-b",
-            "cache": "n",
             "error_code": "429",
             "hosted_env": "unknown",
             "key_name": "team-b-key",
@@ -25,7 +24,6 @@
         "dimensions": {
             "batch": "n",
             "business_unit_id": "team-b",
-            "cache": "n",
             "error_code": "429",
             "hosted_env": "unknown",
             "key_name": "team-b-key",
@@ -52,6 +50,7 @@
             "key_name": "team-b-key",
             "limit": "3",
             "model": "gpt-4o-mini",
+            "platform": "unknown",
             "provider": null,
             "rate": "rpm",
             "region": "global",

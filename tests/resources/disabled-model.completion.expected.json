@@ -3,7 +3,6 @@
         "dimensions": {
             "batch": "n",
             "business_unit_id": "unknown",
-            "cache": "n",
             "error_code": "400",
             "hosted_env": "unknown",
             "key_name": "filipe-test",
@@ -25,7 +24,6 @@
         "dimensions": {
             "batch": "n",
             "business_unit_id": "unknown",
-            "cache": "n",
             "error_code": "400",
             "hosted_env": "unknown",
             "key_name": "filipe-test",
@@ -51,6 +49,7 @@
             "hosted_env": "unknown",
             "key_name": "filipe-test",
             "model": "gpt-4",
+            "platform": "unknown",
             "provider": null,
             "region": "global",
             "usecase": "acompletion",

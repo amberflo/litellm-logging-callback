@@ -53,6 +53,8 @@ def extract_events_from_log(log):
     error_code = error_details["code"] if error_details else _n
 
     ## TOKENS (unit, quantity, type, cache)
+    # TODO implement "cache"
+    # TODO implement units other than "token"
     tokens = []
 
     if usage.get("prompt_tokens", 0) > 0:
@@ -61,13 +63,16 @@ def extract_events_from_log(log):
     if usage.get("completion_tokens", 0) > 0:
         tokens.append(("token", usage["completion_tokens"], "out", _n))
 
-    dimensions = {
-        # pricing dimensions
+    # TODO implement "tier"
+    tier = _n
+
+    pricing_dimensions = {
         "sku": sku,
-        "tier": _n,  # TODO
-        "cache": _n,  # TODO
+        "tier": tier,
         "batch": batch,
-        # other dimensions
+    }
+
+    dimensions = {
         "business_unit_id": business_unit_id,
         "hosted_env": _hosted_env,
         "key_name": key_name,
@@ -77,7 +82,6 @@ def extract_events_from_log(log):
         "region": region,
         "usecase": usecase,
         "user": user,
-        "error_code": error_code,
     }
 
     base_event = {
@@ -90,13 +94,13 @@ def extract_events_from_log(log):
             **base_event,
             "meterApiName": "llm_api_call",
             "meterValue": 1,
-            "dimensions": dimensions,
+            "dimensions": { **dimensions, **pricing_dimensions, "error_code": error_code }
         },
         {
             **base_event,
             "meterApiName": "llm_api_call_ms",
             "meterValue": request_duration_ms,
-            "dimensions": dimensions,
+            "dimensions": { **dimensions, **pricing_dimensions, "error_code": error_code }
         },
     ]
 
@@ -106,7 +110,7 @@ def extract_events_from_log(log):
                 **base_event,
                 "meterApiName": _get_meter_name(unit),
                 "meterValue": quantity,
-                "dimensions": {**dimensions, "type": in_out, "cache": cache},
+                "dimensions": { **dimensions, **pricing_dimensions, "type": in_out, "cache": cache },
             }
         )
 
@@ -116,17 +120,7 @@ def extract_events_from_log(log):
                 **base_event,
                 "meterApiName": "llm_error_details",
                 "meterValue": 1,
-                "dimensions": {
-                    "business_unit_id": business_unit_id,
-                    "hosted_env": _hosted_env,
-                    "key_name": key_name,
-                    "model": model,
-                    "provider": provider,
-                    "region": region,
-                    "usecase": usecase,
-                    "user": user,
-                    **error_details,
-                }
+                "dimensions": { **dimensions, **error_details }
             }
         )
 

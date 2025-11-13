@@ -3,7 +3,6 @@
         "dimensions": {
             "batch": "n",
             "business_unit_id": "unknown",
-            "cache": "n",
             "error_code": "429",
             "hosted_env": "unknown",
             "key_name": "filipe-test-6",
@@ -25,7 +24,6 @@
         "dimensions": {
             "batch": "n",
             "business_unit_id": "unknown",
-            "cache": "n",
             "error_code": "429",
             "hosted_env": "unknown",
             "key_name": "filipe-test-6",
@@ -52,6 +50,7 @@
             "key_name": "filipe-test-6",
             "limit": "2",
             "model": "claude-3-5-sonnet-20241022-v2:0",
+            "platform": "unknown",
             "provider": "anthropic",
             "rate": "rpm",
             "region": "global",

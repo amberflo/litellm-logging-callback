@@ -3,7 +3,6 @@
         "dimensions": {
             "batch": "n",
             "business_unit_id": "team-c",
-            "cache": "n",
             "error_code": "429",
             "hosted_env": "unknown",
             "key_name": "team-c-key",
@@ -25,7 +24,6 @@
         "dimensions": {
             "batch": "n",
             "business_unit_id": "team-c",
-            "cache": "n",
             "error_code": "429",
             "hosted_env": "unknown",
             "key_name": "team-c-key",
@@ -52,6 +50,7 @@
             "key_name": "team-c-key",
             "limit": "5000",
             "model": "gpt-4o-mini",
+            "platform": "unknown",
             "provider": "openai",
             "rate": "rpm",
             "region": "global",
