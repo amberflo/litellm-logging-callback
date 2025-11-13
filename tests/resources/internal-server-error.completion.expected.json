@@ -1,0 +1,64 @@
+[
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "team-b",
+            "cache": "n",
+            "error_code": "500",
+            "hosted_env": "unknown",
+            "key_name": "team-b-key",
+            "model": "gpt-4o-mini",
+            "platform": "unknown",
+            "provider": "openai",
+            "region": "global",
+            "sku": "unknown",
+            "tier": "n",
+            "usecase": "acompletion",
+            "user": "unknown"
+        },
+        "meterApiName": "llm_api_call",
+        "meterTimeInMillis": 1762979660024,
+        "meterValue": 1,
+        "uniqueId": "c451d57c-652e-4846-b880-e42ef36fccea"
+    },
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "team-b",
+            "cache": "n",
+            "error_code": "500",
+            "hosted_env": "unknown",
+            "key_name": "team-b-key",
+            "model": "gpt-4o-mini",
+            "platform": "unknown",
+            "provider": "openai",
+            "region": "global",
+            "sku": "unknown",
+            "tier": "n",
+            "usecase": "acompletion",
+            "user": "unknown"
+        },
+        "meterApiName": "llm_api_call_ms",
+        "meterTimeInMillis": 1762979660024,
+        "meterValue": 7,
+        "uniqueId": "c451d57c-652e-4846-b880-e42ef36fccea"
+    },
+    {
+        "dimensions": {
+            "business_unit_id": "team-b",
+            "class": "AuthenticationError",
+            "code": "500",
+            "hosted_env": "unknown",
+            "key_name": "team-b-key",
+            "model": "gpt-4o-mini",
+            "provider": "openai",
+            "region": "global",
+            "usecase": "acompletion",
+            "user": "unknown"
+        },
+        "meterApiName": "llm_error_details",
+        "meterTimeInMillis": 1762979660024,
+        "meterValue": 1,
+        "uniqueId": "c451d57c-652e-4846-b880-e42ef36fccea"
+    }
+]

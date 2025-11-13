@@ -1,0 +1,67 @@
+[
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "team-c",
+            "cache": "n",
+            "error_code": "429",
+            "hosted_env": "unknown",
+            "key_name": "team-c-key",
+            "model": "gpt-4o-mini",
+            "platform": "unknown",
+            "provider": "openai",
+            "region": "global",
+            "sku": "unknown",
+            "tier": "n",
+            "usecase": "acompletion",
+            "user": "unknown"
+        },
+        "meterApiName": "llm_api_call",
+        "meterTimeInMillis": 1763041674153,
+        "meterValue": 1,
+        "uniqueId": "3caa2356-be19-45d3-9c7e-cdb73ee92d75"
+    },
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "team-c",
+            "cache": "n",
+            "error_code": "429",
+            "hosted_env": "unknown",
+            "key_name": "team-c-key",
+            "model": "gpt-4o-mini",
+            "platform": "unknown",
+            "provider": "openai",
+            "region": "global",
+            "sku": "unknown",
+            "tier": "n",
+            "usecase": "acompletion",
+            "user": "unknown"
+        },
+        "meterApiName": "llm_api_call_ms",
+        "meterTimeInMillis": 1763041674153,
+        "meterValue": 230,
+        "uniqueId": "3caa2356-be19-45d3-9c7e-cdb73ee92d75"
+    },
+    {
+        "dimensions": {
+            "business_unit_id": "team-c",
+            "class": "RateLimitError",
+            "code": "429",
+            "hosted_env": "unknown",
+            "key_name": "team-c-key",
+            "limit": "5000",
+            "model": "gpt-4o-mini",
+            "provider": "openai",
+            "rate": "rpm",
+            "region": "global",
+            "subject": "provider",
+            "usecase": "acompletion",
+            "user": "unknown"
+        },
+        "meterApiName": "llm_error_details",
+        "meterTimeInMillis": 1763041674153,
+        "meterValue": 1,
+        "uniqueId": "3caa2356-be19-45d3-9c7e-cdb73ee92d75"
+    }
+]

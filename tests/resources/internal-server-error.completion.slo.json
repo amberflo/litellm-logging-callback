@@ -1,0 +1,109 @@
+{
+    "api_base": "",
+    "cache_hit": false,
+    "cache_key": null,
+    "call_type": "acompletion",
+    "completionStartTime": 1762979660.030201,
+    "completion_tokens": 0,
+    "cost_breakdown": null,
+    "custom_llm_provider": "openai",
+    "endTime": 1762979660.030201,
+    "end_user": "",
+    "error_information": {
+        "error_class": "AuthenticationError",
+        "error_code": "500",
+        "error_message": "litellm.AuthenticationError: AuthenticationError: OpenAIException - The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable",
+        "llm_provider": "openai",
+        "traceback": "  File \"/usr/lib/python3.13/site-packages/litellm/utils.py\", line 1483, in wrapper_async\n    result = await original_function(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.13/site-packages/litellm/main.py\", line 614, in acompletion\n    raise exception_type(\n          ~~~~~~~~~~~~~~^\n        model=model,\n        ^^^^^^^^^^^^\n    ...<3 lines>...\n        extra_kwargs=kwargs,\n        ^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/usr/lib/python3.13/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py\", line 2274, in exception_type\n    raise e\n  File \"/usr/lib/python3.13/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py\", line 425, in exception_type\n    raise AuthenticationError(\n    ...<5 lines>...\n    )\n"
+    },
+    "error_str": "litellm.AuthenticationError: AuthenticationError: OpenAIException - The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable",
+    "guardrail_information": null,
+    "hidden_params": {
+        "additional_headers": null,
+        "api_base": null,
+        "batch_models": null,
+        "cache_key": null,
+        "litellm_model_name": null,
+        "litellm_overhead_time_ms": null,
+        "model_id": null,
+        "response_cost": null,
+        "usage_object": null
+    },
+    "id": "c451d57c-652e-4846-b880-e42ef36fccea",
+    "messages": [
+        {
+            "content": "redacted-by-litellm",
+            "role": "user"
+        }
+    ],
+    "metadata": {
+        "applied_guardrails": [],
+        "cold_storage_object_key": null,
+        "mcp_tool_call_metadata": null,
+        "prompt_management_metadata": null,
+        "requester_custom_headers": {},
+        "requester_ip_address": "",
+        "requester_metadata": {},
+        "spend_logs_metadata": null,
+        "usage_object": {
+            "completion_tokens": 0,
+            "completion_tokens_details": null,
+            "prompt_tokens": 0,
+            "prompt_tokens_details": null,
+            "total_tokens": 0
+        },
+        "user_api_key_alias": "team-b-key",
+        "user_api_key_auth_metadata": {
+            "foo": "bar",
+            "service_account_id": "team-b-key"
+        },
+        "user_api_key_budget_reset_at": null,
+        "user_api_key_end_user_id": null,
+        "user_api_key_hash": "356483a422f5884761b764ed39826d56634769b600ab4ae2ae85ea63bd06d5bd",
+        "user_api_key_max_budget": null,
+        "user_api_key_org_id": null,
+        "user_api_key_request_route": "/v1/chat/completions",
+        "user_api_key_spend": 0.0010967499999999999,
+        "user_api_key_team_alias": "Team B",
+        "user_api_key_team_id": "team-b",
+        "user_api_key_user_email": null,
+        "user_api_key_user_id": null,
+        "vector_store_request_metadata": null
+    },
+    "model": "gpt-4o-mini",
+    "model_group": "gpt-4o-mini",
+    "model_id": "de77f968-fb3d-4da7-96b8-8850eaf379e1",
+    "model_map_information": {
+        "model_map_key": "",
+        "model_map_value": null
+    },
+    "model_parameters": {
+        "stream": false
+    },
+    "prompt_tokens": 0,
+    "request_tags": [
+        "User-Agent: curl",
+        "User-Agent: curl/7.88.1"
+    ],
+    "requester_ip_address": "",
+    "response": {
+        "text": "redacted-by-litellm"
+    },
+    "response_cost": 0.0,
+    "response_cost_failure_debug_info": null,
+    "response_time": 0.006610870361328125,
+    "saved_cache_cost": 0.0,
+    "standard_built_in_tools_params": {
+        "file_search": null,
+        "web_search_options": null
+    },
+    "startTime": 1762979660.02359,
+    "status": "failure",
+    "status_fields": {
+        "guardrail_status": "not_run",
+        "llm_api_status": "failure"
+    },
+    "stream": null,
+    "total_tokens": 0,
+    "trace_id": "bf8344c3-8c6d-4f4c-ad0e-d3ce764e7e53"
+}
