@@ -3,7 +3,7 @@
         "dimensions": {
             "batch": "n",
             "business_unit_id": "unknown",
-            "cache": "n",
+            "error_code": "n",
             "hosted_env": "unknown",
             "key_name": "filipe-test",
             "model": "claude-3-5-haiku-20241022-v1:0",
@@ -24,7 +24,7 @@
         "dimensions": {
             "batch": "n",
             "business_unit_id": "unknown",
-            "cache": "n",
+            "error_code": "n",
             "hosted_env": "unknown",
             "key_name": "filipe-test",
             "model": "claude-3-5-haiku-20241022-v1:0",

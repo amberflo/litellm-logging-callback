@@ -1,0 +1,107 @@
+{
+    "api_base": "",
+    "cache_hit": false,
+    "cache_key": null,
+    "call_type": "acompletion",
+    "completionStartTime": 1762979661.964594,
+    "completion_tokens": 0,
+    "cost_breakdown": null,
+    "custom_llm_provider": null,
+    "endTime": 1762979661.964594,
+    "end_user": "",
+    "error_information": {
+        "error_class": "HTTPException",
+        "error_code": "429",
+        "error_message": "429: Rate limit exceeded for team: team-b. Limit type: requests. Current limit: 3, Remaining: 0. Limit resets at: 2025-11-12 20:35:21 UTC",
+        "llm_provider": "",
+        "traceback": "  File \"/usr/lib/python3.13/site-packages/litellm/proxy/proxy_server.py\", line 4686, in chat_completion\n    result = await base_llm_response_processor.base_process_llm_request(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<16 lines>...\n    )\n    ^\n  File \"/usr/lib/python3.13/site-packages/litellm/proxy/common_request_processing.py\", line 448, in base_process_llm_request\n    self.data, logging_obj = await self.common_processing_pre_call_logic(\n                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<13 lines>...\n    )\n    ^\n  File \"/usr/lib/python3.13/site-packages/litellm/proxy/common_request_processing.py\", line 386, in common_processing_pre_call_logic\n    self.data = await proxy_logging_obj.pre_call_hook(  # type: ignore\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        user_api_key_dict=user_api_key_dict, data=self.data, call_type=route_type  # type: ignore\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/usr/lib/python3.13/site-packages/litellm/proxy/utils.py\", line 1035, in pre_call_hook\n    raise e\n  File \"/usr/lib/python3.13/site-packages/litellm/proxy/utils.py\", line 1009, in pre_call_hook\n    response = await _callback.async_pre_call_hook(\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<4 lines>...\n    )\n    ^\n  File \"/usr/lib/python3.13/site-packages/litellm/proxy/hooks/parallel_request_limiter_v3.py\", line 1193, in async_pre_call_hook\n    self._handle_rate_limit_error(\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        response=response,\n        ^^^^^^^^^^^^^^^^^^\n        descriptors=descriptors,\n        ^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/usr/lib/python3.13/site-packages/litellm/proxy/hooks/parallel_request_limiter_v3.py\", line 1106, in _handle_rate_limit_error\n    raise HTTPException(\n    ...<7 lines>...\n    )\n"
+    },
+    "error_str": "429: Rate limit exceeded for team: team-b. Limit type: requests. Current limit: 3, Remaining: 0. Limit resets at: 2025-11-12 20:35:21 UTC",
+    "guardrail_information": null,
+    "hidden_params": {
+        "additional_headers": {},
+        "api_base": null,
+        "batch_models": null,
+        "cache_key": null,
+        "litellm_model_name": null,
+        "litellm_overhead_time_ms": null,
+        "model_id": null,
+        "response_cost": null,
+        "usage_object": null
+    },
+    "id": "3ff1bff4-5d63-4c7e-9123-d3af47e400e0",
+    "messages": [
+        {
+            "content": "redacted-by-litellm",
+            "role": "user"
+        }
+    ],
+    "metadata": {
+        "applied_guardrails": [],
+        "cold_storage_object_key": null,
+        "mcp_tool_call_metadata": null,
+        "prompt_management_metadata": null,
+        "requester_custom_headers": {},
+        "requester_ip_address": "",
+        "requester_metadata": {},
+        "spend_logs_metadata": null,
+        "usage_object": {
+            "completion_tokens": 0,
+            "completion_tokens_details": null,
+            "prompt_tokens": 0,
+            "prompt_tokens_details": null,
+            "total_tokens": 0
+        },
+        "user_api_key_alias": "team-b-key",
+        "user_api_key_auth_metadata": {
+            "foo": "bar",
+            "service_account_id": "team-b-key"
+        },
+        "user_api_key_budget_reset_at": null,
+        "user_api_key_end_user_id": null,
+        "user_api_key_hash": "356483a422f5884761b764ed39826d56634769b600ab4ae2ae85ea63bd06d5bd",
+        "user_api_key_max_budget": null,
+        "user_api_key_org_id": null,
+        "user_api_key_request_route": "/v1/chat/completions",
+        "user_api_key_spend": 0.0011342499999999998,
+        "user_api_key_team_alias": "Team B",
+        "user_api_key_team_id": "team-b",
+        "user_api_key_user_email": null,
+        "user_api_key_user_id": null,
+        "vector_store_request_metadata": null
+    },
+    "model": "gpt-4o-mini",
+    "model_group": "",
+    "model_id": "",
+    "model_map_information": {
+        "model_map_key": "",
+        "model_map_value": null
+    },
+    "model_parameters": {},
+    "prompt_tokens": 0,
+    "request_tags": [
+        "User-Agent: curl",
+        "User-Agent: curl/7.88.1"
+    ],
+    "requester_ip_address": "",
+    "response": {
+        "text": "redacted-by-litellm"
+    },
+    "response_cost": 0.0,
+    "response_cost_failure_debug_info": null,
+    "response_time": 0.0031888484954833984,
+    "saved_cache_cost": 0.0,
+    "standard_built_in_tools_params": {
+        "file_search": null,
+        "web_search_options": null
+    },
+    "startTime": 1762979661.961405,
+    "status": "failure",
+    "status_fields": {
+        "guardrail_status": "not_run",
+        "llm_api_status": "failure"
+    },
+    "stream": null,
+    "total_tokens": 0,
+    "trace_id": "23befc1b-6b16-4e3c-90dc-a61cb5e073c7"
+}

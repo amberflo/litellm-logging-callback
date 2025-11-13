@@ -1,0 +1,63 @@
+[
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "unknown",
+            "error_code": "400",
+            "hosted_env": "unknown",
+            "key_name": "filipe-test",
+            "model": "gpt-4",
+            "platform": "unknown",
+            "provider": null,
+            "region": "global",
+            "sku": "unknown",
+            "tier": "n",
+            "usecase": "acompletion",
+            "user": "default_user_id"
+        },
+        "meterApiName": "llm_api_call",
+        "meterTimeInMillis": 1761766308156,
+        "meterValue": 1,
+        "uniqueId": "3939d3cf-a012-42d9-ab75-e87b1b2930de"
+    },
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "unknown",
+            "error_code": "400",
+            "hosted_env": "unknown",
+            "key_name": "filipe-test",
+            "model": "gpt-4",
+            "platform": "unknown",
+            "provider": null,
+            "region": "global",
+            "sku": "unknown",
+            "tier": "n",
+            "usecase": "acompletion",
+            "user": "default_user_id"
+        },
+        "meterApiName": "llm_api_call_ms",
+        "meterTimeInMillis": 1761766308156,
+        "meterValue": 3,
+        "uniqueId": "3939d3cf-a012-42d9-ab75-e87b1b2930de"
+    },
+    {
+        "dimensions": {
+            "business_unit_id": "unknown",
+            "class": "ProxyModelNotFoundError",
+            "code": "400",
+            "hosted_env": "unknown",
+            "key_name": "filipe-test",
+            "model": "gpt-4",
+            "platform": "unknown",
+            "provider": null,
+            "region": "global",
+            "usecase": "acompletion",
+            "user": "default_user_id"
+        },
+        "meterApiName": "llm_error_details",
+        "meterTimeInMillis": 1761766308156,
+        "meterValue": 1,
+        "uniqueId": "3939d3cf-a012-42d9-ab75-e87b1b2930de"
+    }
+]

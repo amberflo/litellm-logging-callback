@@ -3,7 +3,7 @@
         "dimensions": {
             "batch": "n",
             "business_unit_id": "team-b",
-            "cache": "n",
+            "error_code": "n",
             "hosted_env": "unknown",
             "key_name": "filipe-test-2",
             "model": "gpt-4o",
@@ -24,7 +24,7 @@
         "dimensions": {
             "batch": "n",
             "business_unit_id": "team-b",
-            "cache": "n",
+            "error_code": "n",
             "hosted_env": "unknown",
             "key_name": "filipe-test-2",
             "model": "gpt-4o",

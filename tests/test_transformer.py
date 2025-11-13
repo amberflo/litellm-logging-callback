@@ -39,6 +39,12 @@ class TestTransformer(unittest.TestCase):
             "openai-text-embedding-ada-002.embedding",
             "openai-team-key-a.completion",
             "openai-team-key-b.completion",
+            # error cases
+            "disabled-model.completion",
+            "api-key-rate-limit.completion",
+            "internal-server-error.completion",
+            "team-rate-limit.completion",
+            "openai-rate-limit.completion",
         ]
 
         for case in cases:
@@ -50,15 +56,3 @@ class TestTransformer(unittest.TestCase):
 
                 expected = _load_expected(case)
                 self.assertEqual(events, expected)
-
-    def test_transformer_does_not_produce_events(self):
-        cases = [
-            "disabled-model.completion",
-        ]
-
-        for case in cases:
-            with self.subTest(case=case):
-                log = _load_log(case)
-
-                events = extract_events_from_log(log)
-                self.assertIsNone(events)

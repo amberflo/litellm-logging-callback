@@ -3,6 +3,7 @@ This model provides pure functions that extract Amberflo Meter Events from
 LiteLLM's Standard Logging Payload objects.
 """
 
+import re
 from urllib.parse import urlparse
 
 from .utils import get_env
@@ -10,14 +11,11 @@ from .utils import get_env
 
 _unknown = "unknown"
 _global = "global"
+_n = "n"
 _hosted_env = get_env("AFLO_HOSTED_ENV", _unknown)
 
 
 def extract_events_from_log(log):
-    # TODO consider metering errors
-    if log["error_information"]["error_class"]:
-        return
-
     metadata = log["metadata"]
     usage = metadata["usage_object"]
 
@@ -31,10 +29,15 @@ def extract_events_from_log(log):
 
     model_info = log["model_map_information"]["model_map_value"]
 
-    sku = model_info["key"]
-    platform = model_info["litellm_provider"]
+    if model_info:
+        sku = model_info["key"]
+        platform = model_info["litellm_provider"]
+    else:
+        # happens on error scenarios
+        sku = _unknown
+        platform = _unknown
 
-    batch = "y" if log["hidden_params"]["batch_models"] else "n"
+    batch = "y" if log["hidden_params"]["batch_models"] else _n
 
     usecase = log["call_type"]
 
@@ -44,32 +47,42 @@ def extract_events_from_log(log):
 
     region = _resolve_region(platform, log) or _global
 
-    # (unit, quantity, type, cache)
+    ## ERRORS
+    error_details = _extract_error_details(log["error_information"])
+
+    error_code = error_details["code"] if error_details else _n
+
+    ## TOKENS (unit, quantity, type, cache)
+    # TODO implement "cache"
+    # TODO implement units other than "token"
     tokens = []
 
     if usage.get("prompt_tokens", 0) > 0:
-        tokens.append(("token", usage["prompt_tokens"], "in", "n"))
+        tokens.append(("token", usage["prompt_tokens"], "in", _n))
 
     if usage.get("completion_tokens", 0) > 0:
-        tokens.append(("token", usage["completion_tokens"], "out", "n"))
+        tokens.append(("token", usage["completion_tokens"], "out", _n))
 
-    dimensions = dict(
-        # pricing dimensions
-        sku=sku,
-        tier="n",  # TODO
-        cache="n",  # TODO
-        batch=batch,
-        # other dimensions
-        business_unit_id=business_unit_id,
-        hosted_env=_hosted_env,
-        key_name=key_name,
-        model=model,
-        platform=platform,
-        provider=provider,
-        region=region,
-        usecase=usecase,
-        user=user,
-    )
+    # TODO implement "tier"
+    tier = _n
+
+    pricing_dimensions = {
+        "sku": sku,
+        "tier": tier,
+        "batch": batch,
+    }
+
+    dimensions = {
+        "business_unit_id": business_unit_id,
+        "hosted_env": _hosted_env,
+        "key_name": key_name,
+        "model": model,
+        "platform": platform,
+        "provider": provider,
+        "region": region,
+        "usecase": usecase,
+        "user": user,
+    }
 
     base_event = {
         "meterTimeInMillis": request_time_ms,
@@ -81,13 +94,21 @@ def extract_events_from_log(log):
             **base_event,
             "meterApiName": "llm_api_call",
             "meterValue": 1,
-            "dimensions": dimensions,
+            "dimensions": {
+                **dimensions,
+                **pricing_dimensions,
+                "error_code": error_code,
+            },
         },
         {
             **base_event,
             "meterApiName": "llm_api_call_ms",
             "meterValue": request_duration_ms,
-            "dimensions": dimensions,
+            "dimensions": {
+                **dimensions,
+                **pricing_dimensions,
+                "error_code": error_code,
+            },
         },
     ]
 
@@ -97,7 +118,22 @@ def extract_events_from_log(log):
                 **base_event,
                 "meterApiName": _get_meter_name(unit),
                 "meterValue": quantity,
-                "dimensions": {**dimensions, "type": in_out, "cache": cache},
+                "dimensions": {
+                    **dimensions,
+                    **pricing_dimensions,
+                    "type": in_out,
+                    "cache": cache,
+                },
+            }
+        )
+
+    if error_details:
+        events.append(
+            {
+                **base_event,
+                "meterApiName": "llm_error_details",
+                "meterValue": 1,
+                "dimensions": {**dimensions, **error_details},
             }
         )
 
@@ -154,3 +190,42 @@ def _get_meter_name(unit):
         unit = "text_token"
 
     return f"llm_{unit}s"
+
+
+_openai_429_error_regex = r"Rate limit reached .* on .*\(([^:]+)\): Limit (\d+)"
+
+_litellm_429_error_regex = (
+    r"Rate limit exceeded for (\w+):.+Limit type: (\w+).+Current limit: (\d+)"
+)
+
+
+def _extract_error_details(error_info):
+    if not error_info["error_class"]:
+        return None
+
+    error = {
+        "class": error_info["error_class"],
+        "code": error_info["error_code"],
+    }
+
+    if error["code"] == "429":
+        message = error_info["error_message"]
+
+        if error_info["llm_provider"] == "openai":
+            match = re.search(_openai_429_error_regex, message)
+            if match:
+                error["subject"] = "provider"
+                error["rate"] = match.group(1).lower()
+                error["limit"] = match.group(2)
+
+        else:
+            match = re.search(_litellm_429_error_regex, message)
+            if match:
+                error["subject"] = match.group(1)
+
+                limit_type = match.group(2)
+                error["rate"] = "rpm" if limit_type == "requests" else "tpm"
+
+                error["limit"] = match.group(3)
+
+    return error

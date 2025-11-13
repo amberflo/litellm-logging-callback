@@ -1,0 +1,66 @@
+[
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "team-b",
+            "error_code": "429",
+            "hosted_env": "unknown",
+            "key_name": "team-b-key",
+            "model": "gpt-4o-mini",
+            "platform": "unknown",
+            "provider": null,
+            "region": "global",
+            "sku": "unknown",
+            "tier": "n",
+            "usecase": "acompletion",
+            "user": "unknown"
+        },
+        "meterApiName": "llm_api_call",
+        "meterTimeInMillis": 1762979661961,
+        "meterValue": 1,
+        "uniqueId": "3ff1bff4-5d63-4c7e-9123-d3af47e400e0"
+    },
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "team-b",
+            "error_code": "429",
+            "hosted_env": "unknown",
+            "key_name": "team-b-key",
+            "model": "gpt-4o-mini",
+            "platform": "unknown",
+            "provider": null,
+            "region": "global",
+            "sku": "unknown",
+            "tier": "n",
+            "usecase": "acompletion",
+            "user": "unknown"
+        },
+        "meterApiName": "llm_api_call_ms",
+        "meterTimeInMillis": 1762979661961,
+        "meterValue": 3,
+        "uniqueId": "3ff1bff4-5d63-4c7e-9123-d3af47e400e0"
+    },
+    {
+        "dimensions": {
+            "business_unit_id": "team-b",
+            "class": "HTTPException",
+            "code": "429",
+            "hosted_env": "unknown",
+            "key_name": "team-b-key",
+            "limit": "3",
+            "model": "gpt-4o-mini",
+            "platform": "unknown",
+            "provider": null,
+            "rate": "rpm",
+            "region": "global",
+            "subject": "team",
+            "usecase": "acompletion",
+            "user": "unknown"
+        },
+        "meterApiName": "llm_error_details",
+        "meterTimeInMillis": 1762979661961,
+        "meterValue": 1,
+        "uniqueId": "3ff1bff4-5d63-4c7e-9123-d3af47e400e0"
+    }
+]
