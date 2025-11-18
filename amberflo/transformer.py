@@ -17,7 +17,6 @@ _hosted_env = get_env("AFLO_HOSTED_ENV", _unknown)
 
 def extract_events_from_log(log):
     metadata = log["metadata"]
-    usage = metadata["usage_object"]
 
     request_id = log["id"]
     request_time_ms = round(log["startTime"] * 1000)
@@ -52,16 +51,7 @@ def extract_events_from_log(log):
 
     error_code = error_details["code"] if error_details else _n
 
-    ## TOKENS (unit, quantity, type, cache)
-    # TODO implement "cache"
-    # TODO implement units other than "token"
-    tokens = []
-
-    if usage.get("prompt_tokens", 0) > 0:
-        tokens.append(("token", usage["prompt_tokens"], "in", _n))
-
-    if usage.get("completion_tokens", 0) > 0:
-        tokens.append(("token", usage["completion_tokens"], "out", _n))
+    usage = _extract_usage(usecase, metadata["usage_object"], log["model_parameters"])
 
     # TODO implement "tier"
     tier = _n
@@ -112,7 +102,7 @@ def extract_events_from_log(log):
         },
     ]
 
-    for unit, quantity, in_out, cache in tokens:
+    for unit, quantity, in_out, cache in usage:
         events.append(
             {
                 **base_event,
@@ -229,3 +219,33 @@ def _extract_error_details(error_info):
                 error["limit"] = match.group(3)
 
     return error
+
+
+def _extract_usage(usecase, usage_info, model_parameters):
+    """
+    Returns a list of usage tuples:
+        (unit, quantity, type, cache)
+
+    TODO implement "cache"
+    TODO implement and test more cases
+    """
+    usage = []
+
+    prompt_tokens = usage_info.get("prompt_tokens") or 0
+    comp_tokens = usage_info.get("completion_tokens") or 0
+
+    if usecase == "aimage_generation":
+        if model_parameters:
+            n = model_parameters.get("n", 1)
+        else:
+            n = 1
+
+        usage.append(("token", prompt_tokens, "in", _n))
+        usage.append(("image", n, "out", _n))
+        usage.append(("image_token", comp_tokens, "out", _n))
+
+    else:
+        usage.append(("token", prompt_tokens, "in", _n))
+        usage.append(("token", comp_tokens, "out", _n))
+
+    return (u for u in usage if u[1])

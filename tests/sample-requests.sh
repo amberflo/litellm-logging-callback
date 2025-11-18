@@ -27,19 +27,25 @@ call() {
 call GET 'v1/models'
 
 # invalid model
-call POST 'v1/chat/completions' -d '{ "model": "gpt-4", "messages": [{"role": "user", "content": "Say hello in French"}] }'
+#call POST 'v1/chat/completions' -d '{ "model": "gpt-4", "messages": [{"role": "user", "content": "Say hello in French"}] }'
 
 # openai text completion
-call POST 'v1/chat/completions' -d '{ "model": "gpt-4o", "messages": [{"role": "user", "content": "Say hello in French"}] }'
+#call POST 'v1/chat/completions' -d '{ "model": "gpt-4o", "messages": [{"role": "user", "content": "Say hello in French"}] }'
 
 # openai text embeddings
-call POST 'v1/embeddings' -d '{ "model": "text-embedding-ada-002", "input": "The quick brown fox jumps over the lazy dog" }'
+#call POST 'v1/embeddings' -d '{ "model": "text-embedding-ada-002", "input": "The quick brown fox jumps over the lazy dog" }'
 
-# bedrock text completion
-call POST 'v1/chat/completions' -d '{ "model": "anthropic.claude-3-5-haiku-20241022-v1:0", "messages": [{"role": "user", "content": "Say hello in Japanese"}] }'
+# bedrock anthropic text completion
+#call POST 'v1/chat/completions' -d '{ "model": "anthropic.claude-3-5-haiku-20241022-v1:0", "messages": [{"role": "user", "content": "Say hello in Japanese"}] }'
 
-# anthropic text completion
-call POST 'v1/chat/completions' -d '{ "model": "anthropic.claude-3-5-sonnet-20241022-v2:0", "messages": [{"role": "user", "content": "Say hello in German"}] }'
+# bedrock anthropic text completion
+#call POST 'v1/chat/completions' -d '{ "model": "anthropic.claude-3-5-sonnet-20241022-v2:0", "messages": [{"role": "user", "content": "Say hello in German"}] }'
 
-# amazon titan embeddings
-call POST 'v1/embeddings' -d '{ "model": "amazon.titan-embed-text-v2:0", "input": "The quick brown fox jumps over the lazy dog" }'
+# bedrock titan embeddings
+#call POST 'v1/embeddings' -d '{ "model": "amazon.titan-embed-text-v2:0", "input": "The quick brown fox jumps over the lazy dog" }'
+
+# openai image generation
+#call POST 'v1/images/generations' -d '{ "model": "gpt-image-1", "prompt": "A futuristic data center floating in the clouds", "n": 2, "size": "1024x1024" }'
+
+# bedrock image generation
+#call POST 'v1/images/generations' -d '{ "model": "stability.stable-image-core-v1:1", "prompt": "A futuristic data center floating in the clouds", "n": 1, "size": "1024x1024" }'

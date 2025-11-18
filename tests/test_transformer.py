@@ -34,6 +34,7 @@ def _write_expected(name, data):
 class TestTransformer(unittest.TestCase):
     def test_transformer_produces_events(self):
         cases = [
+            # text completion
             "bedrock-anthropic-claude-haiku.completion",
             "openai-gpt-4o.completion",
             "openai-text-embedding-ada-002.embedding",
@@ -45,6 +46,9 @@ class TestTransformer(unittest.TestCase):
             "internal-server-error.completion",
             "team-rate-limit.completion",
             "openai-rate-limit.completion",
+            # image gen
+            "bedrock-stability-v1.image_gen",
+            "openai-gpt-image-1.image_gen",
         ]
 
         for case in cases:
