@@ -234,18 +234,14 @@ def _extract_usage(usecase, usage_info):
     prompt_tokens = usage_info.get("prompt_tokens") or 0
     comp_tokens = usage_info.get("completion_tokens") or 0
 
-    if usecase == 'aimage_generation':
+    if usecase == "aimage_generation":
         usage.append(("token", prompt_tokens, "in", _n))
 
-        usage.append(('image', 1, "out", _n))
+        usage.append(("image", 1, "out", _n))
         usage.append(("image_token", comp_tokens, "out", _n))
 
     else:
         usage.append(("token", prompt_tokens, "in", _n))
         usage.append(("token", comp_tokens, "out", _n))
 
-    return (
-        u
-        for u in usage
-        if u[1]
-    )
+    return (u for u in usage if u[1])
