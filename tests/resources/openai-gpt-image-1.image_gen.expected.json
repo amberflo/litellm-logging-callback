@@ -1,0 +1,110 @@
+[
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "unknown",
+            "error_code": "n",
+            "hosted_env": "unknown",
+            "key_name": "filipe-test-6",
+            "model": "gpt-image-1",
+            "platform": "unknown",
+            "provider": "openai",
+            "region": "global",
+            "sku": "unknown",
+            "tier": "n",
+            "usecase": "aimage_generation",
+            "user": "dc996d2a-b1e0-4e6b-9268-07e0a2adb585"
+        },
+        "meterApiName": "llm_api_call",
+        "meterTimeInMillis": 1763468186781,
+        "meterValue": 1,
+        "uniqueId": "9caf8ae1-3464-4f02-bbdf-e07fad6b814e"
+    },
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "unknown",
+            "error_code": "n",
+            "hosted_env": "unknown",
+            "key_name": "filipe-test-6",
+            "model": "gpt-image-1",
+            "platform": "unknown",
+            "provider": "openai",
+            "region": "global",
+            "sku": "unknown",
+            "tier": "n",
+            "usecase": "aimage_generation",
+            "user": "dc996d2a-b1e0-4e6b-9268-07e0a2adb585"
+        },
+        "meterApiName": "llm_api_call_ms",
+        "meterTimeInMillis": 1763468186781,
+        "meterValue": 50716,
+        "uniqueId": "9caf8ae1-3464-4f02-bbdf-e07fad6b814e"
+    },
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "unknown",
+            "cache": "n",
+            "hosted_env": "unknown",
+            "key_name": "filipe-test-6",
+            "model": "gpt-image-1",
+            "platform": "unknown",
+            "provider": "openai",
+            "region": "global",
+            "sku": "unknown",
+            "tier": "n",
+            "type": "in",
+            "usecase": "aimage_generation",
+            "user": "dc996d2a-b1e0-4e6b-9268-07e0a2adb585"
+        },
+        "meterApiName": "llm_text_tokens",
+        "meterTimeInMillis": 1763468186781,
+        "meterValue": 14,
+        "uniqueId": "9caf8ae1-3464-4f02-bbdf-e07fad6b814e"
+    },
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "unknown",
+            "cache": "n",
+            "hosted_env": "unknown",
+            "key_name": "filipe-test-6",
+            "model": "gpt-image-1",
+            "platform": "unknown",
+            "provider": "openai",
+            "region": "global",
+            "sku": "unknown",
+            "tier": "n",
+            "type": "out",
+            "usecase": "aimage_generation",
+            "user": "dc996d2a-b1e0-4e6b-9268-07e0a2adb585"
+        },
+        "meterApiName": "llm_images",
+        "meterTimeInMillis": 1763468186781,
+        "meterValue": 1,
+        "uniqueId": "9caf8ae1-3464-4f02-bbdf-e07fad6b814e"
+    },
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "unknown",
+            "cache": "n",
+            "hosted_env": "unknown",
+            "key_name": "filipe-test-6",
+            "model": "gpt-image-1",
+            "platform": "unknown",
+            "provider": "openai",
+            "region": "global",
+            "sku": "unknown",
+            "tier": "n",
+            "type": "out",
+            "usecase": "aimage_generation",
+            "user": "dc996d2a-b1e0-4e6b-9268-07e0a2adb585"
+        },
+        "meterApiName": "llm_image_tokens",
+        "meterTimeInMillis": 1763468186781,
+        "meterValue": 4160,
+        "uniqueId": "9caf8ae1-3464-4f02-bbdf-e07fad6b814e"
+    }
+]
