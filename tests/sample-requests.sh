@@ -7,9 +7,7 @@
 # - to help produce the standard log objects JSONs in the ./resources/
 # - to serve as a manual end-to-end test scenario.
 
-API_KEY='sk-OQ_CrrnNC8cNsCDxwcgW-Q' # filipe test 6
-#API_KEY='sk-qqVs5AYQvH3DmmqsJ8DLGg' # team b key
-#API_KEY='sk-dvvOKu3sYTQFcEUimSN-3w' # team c key
+API_KEY='...'
 
 call() {
     local method="$1"
@@ -47,7 +45,7 @@ call GET 'v1/models'
 #call POST 'v1/embeddings' -d '{ "model": "amazon.titan-embed-text-v2:0", "input": "The quick brown fox jumps over the lazy dog" }'
 
 # openai image generation
-#call POST 'v1/images/generations' -d '{ "model": "gpt-image-1", "prompt": "A futuristic data center floating in the clouds", "n": 1, "size": "1024x1024" }'
+#call POST 'v1/images/generations' -d '{ "model": "gpt-image-1", "prompt": "A futuristic data center floating in the clouds", "n": 2, "size": "1024x1024" }'
 
 # bedrock image generation
 #call POST 'v1/images/generations' -d '{ "model": "stability.stable-image-core-v1:1", "prompt": "A futuristic data center floating in the clouds", "n": 1, "size": "1024x1024" }'

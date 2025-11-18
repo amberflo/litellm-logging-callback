@@ -51,7 +51,7 @@ def extract_events_from_log(log):
 
     error_code = error_details["code"] if error_details else _n
 
-    usage = _extract_usage(usecase, metadata["usage_object"])
+    usage = _extract_usage(usecase, metadata["usage_object"], log["model_parameters"])
 
     # TODO implement "tier"
     tier = _n
@@ -221,7 +221,7 @@ def _extract_error_details(error_info):
     return error
 
 
-def _extract_usage(usecase, usage_info):
+def _extract_usage(usecase, usage_info, model_parameters):
     """
     Returns a list of usage tuples:
         (unit, quantity, type, cache)
@@ -235,9 +235,13 @@ def _extract_usage(usecase, usage_info):
     comp_tokens = usage_info.get("completion_tokens") or 0
 
     if usecase == "aimage_generation":
-        usage.append(("token", prompt_tokens, "in", _n))
+        if model_parameters:
+            n = model_parameters.get("n", 1)
+        else:
+            n = 1
 
-        usage.append(("image", 1, "out", _n))
+        usage.append(("token", prompt_tokens, "in", _n))
+        usage.append(("image", n, "out", _n))
         usage.append(("image_token", comp_tokens, "out", _n))
 
     else:

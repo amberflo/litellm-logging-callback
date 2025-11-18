@@ -3,11 +3,11 @@
     "cache_hit": null,
     "cache_key": null,
     "call_type": "aimage_generation",
-    "completionStartTime": 1763468237.49722,
-    "completion_tokens": 4160,
+    "completionStartTime": 1763476241.421283,
+    "completion_tokens": 8320,
     "cost_breakdown": null,
     "custom_llm_provider": "openai",
-    "endTime": 1763468237.49722,
+    "endTime": 1763476241.421283,
     "end_user": "",
     "error_information": {
         "error_class": "",
@@ -26,10 +26,10 @@
         "litellm_model_name": "gpt-image-1",
         "litellm_overhead_time_ms": null,
         "model_id": "ae7a6e1c-5d91-406d-ae60-67a7e6ccfcda",
-        "response_cost": 0.041999999696896,
+        "response_cost": 0.083999999393792,
         "usage_object": null
     },
-    "id": "9caf8ae1-3464-4f02-bbdf-e07fad6b814e",
+    "id": "7b211caf-6302-44b2-bad8-4823b2baea3d",
     "messages": [
         {
             "content": "redacted-by-litellm",
@@ -46,16 +46,16 @@
         "requester_metadata": {},
         "spend_logs_metadata": null,
         "usage_object": {
-            "completion_tokens": 4160,
+            "completion_tokens": 8320,
             "completion_tokens_details": null,
-            "prompt_tokens": 14,
+            "prompt_tokens": 28,
             "prompt_tokens_details": {
                 "audio_tokens": null,
                 "cached_tokens": null,
                 "image_tokens": null,
                 "text_tokens": null
             },
-            "total_tokens": 4174
+            "total_tokens": 8348
         },
         "user_api_key_alias": "filipe-test-6",
         "user_api_key_auth_metadata": {
@@ -70,7 +70,7 @@
         "user_api_key_max_budget": null,
         "user_api_key_org_id": null,
         "user_api_key_request_route": "/v1/images/generations",
-        "user_api_key_spend": 0.022371900000000004,
+        "user_api_key_spend": 0.22840439909068802,
         "user_api_key_team_alias": null,
         "user_api_key_team_id": null,
         "user_api_key_user_email": "filipe+litellm5@amberflo.io",
@@ -85,9 +85,9 @@
         "model_map_value": null
     },
     "model_parameters": {
-        "n": 1
+        "n": 2
     },
-    "prompt_tokens": 14,
+    "prompt_tokens": 28,
     "request_tags": [
         "User-Agent: curl",
         "User-Agent: curl/7.88.1"
@@ -96,21 +96,21 @@
     "response": {
         "text": "redacted-by-litellm"
     },
-    "response_cost": 0.041999999696896,
+    "response_cost": 0.083999999393792,
     "response_cost_failure_debug_info": null,
-    "response_time": 50.71640110015869,
+    "response_time": 58.814433097839355,
     "saved_cache_cost": 0.0,
     "standard_built_in_tools_params": {
         "file_search": null,
         "web_search_options": null
     },
-    "startTime": 1763468186.780819,
+    "startTime": 1763476182.60685,
     "status": "success",
     "status_fields": {
         "guardrail_status": "not_run",
         "llm_api_status": "success"
     },
     "stream": null,
-    "total_tokens": 4174,
-    "trace_id": "547e3081-fb71-48f1-a1c3-ba9305a403bb"
+    "total_tokens": 8348,
+    "trace_id": "8a7d59e3-2ac6-412e-b26f-dcb9dea22304"
 }

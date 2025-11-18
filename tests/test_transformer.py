@@ -58,7 +58,5 @@ class TestTransformer(unittest.TestCase):
                 events = extract_events_from_log(log)
                 self.assertIsNotNone(events)
 
-                _write_expected(case, events)
-
                 expected = _load_expected(case)
                 self.assertEqual(events, expected)
