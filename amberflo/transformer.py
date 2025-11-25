@@ -72,6 +72,7 @@ def extract_events_from_log(log):
         "region": region,
         "usecase": usecase,
         "user": user,
+        "gateway": "litellm",
     }
 
     base_event = {
