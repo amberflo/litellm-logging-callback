@@ -27,6 +27,7 @@ Amberflo can write meter events either to an AWS S3 bucket or Azure Blob contain
 | `AFLO_BATCH_SIZE` | No | `100` | Number of events to batch before writing |
 | `AFLO_FLUSH_INTERVAL` | No | `300` | Interval in seconds to flush events (5 minutes) |
 | `AFLO_MAX_BUFFER_SIZE` | No | `10000` | Maximum number of events to buffer in memory |
+| `AFLO_SEND_OBJECT_METADATA` | No | `false` | Creates business units and `team` virtual tags in Amberflo |
 
 ### API env file
 ```YAML
