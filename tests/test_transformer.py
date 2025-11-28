@@ -55,7 +55,7 @@ class TestTransformer(unittest.TestCase):
             with self.subTest(case=case):
                 log = _load_log(case)
 
-                events = extract_events_from_log(log)
+                events = extract_events_from_log(log, send_metadata=True, hosted_env='agent1')
                 self.assertIsNotNone(events)
 
                 expected = _load_expected(case)
