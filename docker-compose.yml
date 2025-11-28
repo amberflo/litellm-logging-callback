@@ -49,7 +49,8 @@ services:
       - AFLO_DEBUG=true
       - AFLO_BATCH_SIZE=5
       - AFLO_FLUSH_INTERVAL=20
-      - AFLO_MAX_BUFFER_SIZE=10000 # optional
+      - AFLO_SEND_OBJECT_METADATA=true
+      - AFLO_MAX_BUFFER_SIZE=10000
     env_file:
       # AWS_ACCESS_KEY_ID=...
       # AWS_SECRET_ACCESS_KEY=...

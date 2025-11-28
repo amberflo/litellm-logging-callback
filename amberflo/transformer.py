@@ -6,23 +6,26 @@ LiteLLM's Standard Logging Payload objects.
 import re
 from urllib.parse import urlparse
 
-from .utils import get_env
+from .utils import get_env, boolean
 
 
 _unknown = "unknown"
 _global = "global"
 _n = "n"
+
 _hosted_env = get_env("AFLO_HOSTED_ENV", _unknown)
 
+_send_metadata = get_env("AFLO_SEND_OBJECT_METADATA", default=False, validate=boolean)
 
-def extract_events_from_log(log):
+
+def extract_events_from_log(log, send_metadata=_send_metadata, hosted_env=_hosted_env):
     metadata = log["metadata"]
 
     request_id = log["id"]
     request_time_ms = round(log["startTime"] * 1000)
     request_duration_ms = round((log["endTime"] - log["startTime"]) * 1000)
 
-    business_unit_id = _get_business_unit_id(metadata) or _unknown
+    business_unit_id, team = _get_bu_and_team(metadata)
 
     provider, model = _resolve_provider_model(log)
 
@@ -56,6 +59,19 @@ def extract_events_from_log(log):
     # TODO implement "tier"
     tier = _n
 
+    if send_metadata:
+        metadata_events = [
+            {
+                "meterApiName": "aflo.object_metadata",
+                "meterValue": 1,
+                "meterTimeInMillis": request_time_ms,
+                "dimensions": obj,
+            }
+            for obj in _get_object_metadata(metadata)
+        ]
+    else:
+        metadata_events = []
+
     pricing_dimensions = {
         "sku": sku,
         "tier": tier,
@@ -64,7 +80,8 @@ def extract_events_from_log(log):
 
     dimensions = {
         "business_unit_id": business_unit_id,
-        "hosted_env": _hosted_env,
+        "team": team,
+        "hosted_env": hosted_env,
         "key_name": key_name,
         "model": model,
         "platform": platform,
@@ -80,7 +97,7 @@ def extract_events_from_log(log):
         "uniqueId": request_id,
     }
 
-    events = [
+    events = metadata_events + [
         {
             **base_event,
             "meterApiName": "llm_api_call",
@@ -142,14 +159,49 @@ def _resolve_region(platform, log):
     return None
 
 
-def _get_business_unit_id(metadata):
-    """
-    We support two conventions:
-    1. Set the `business_unit_id` as a custom metadata in the User or Team objects.
-    2. Set the Team ID to be the `business_unit_id`
-    """
-    buid = metadata.get("user_api_key_auth_metadata", {}).get("business_unit_id")
-    return buid or metadata.get("user_api_key_team_id")
+def _get_bu_and_team(metadata):
+    bu_id = metadata.get("user_api_key_auth_metadata", {}).get("business_unit_id")
+    team_id = metadata.get("user_api_key_team_id")
+
+    return bu_id or _unknown, team_id or _unknown
+
+
+def _get_object_metadata(metadata):
+    bu_id = metadata.get("user_api_key_auth_metadata", {}).get("business_unit_id")
+    team_id = metadata.get("user_api_key_team_id")
+
+    if bu_id and team_id:
+        return [
+            {
+                "type": "virtual_tag",
+                "name": "team",
+                "value": metadata.get("user_api_key_team_id"),
+                "label": metadata.get("user_api_key_team_alias"),
+                "parentName": "businessUnitId",
+                "parentValue": bu_id,
+            }
+        ]
+
+    if bu_id:
+        return [
+            {
+                "type": "business_unit",
+                "id": bu_id,
+                "name": bu_id,
+            }
+        ]
+
+    if team_id:
+        return [
+            {
+                "type": "virtual_tag",
+                "name": "team",
+                "value": metadata.get("user_api_key_team_id"),
+                "label": metadata.get("user_api_key_team_alias"),
+            }
+        ]
+
+    return []
 
 
 def _get_api_base_domain_part(log, index):

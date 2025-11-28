@@ -1,17 +1,29 @@
 [
     {
         "dimensions": {
+            "label": "Team B",
+            "name": "team",
+            "type": "virtual_tag",
+            "value": "team-b"
+        },
+        "meterApiName": "aflo.object_metadata",
+        "meterTimeInMillis": 1762786049138,
+        "meterValue": 1
+    },
+    {
+        "dimensions": {
             "batch": "n",
-            "business_unit_id": "team-b",
+            "business_unit_id": "unknown",
             "error_code": "n",
             "gateway": "litellm",
-            "hosted_env": "unknown",
+            "hosted_env": "agent1",
             "key_name": "filipe-test-2",
             "model": "gpt-4o",
             "platform": "openai",
             "provider": "openai",
             "region": "global",
             "sku": "gpt-4o-2024-08-06",
+            "team": "team-b",
             "tier": "n",
             "usecase": "acompletion",
             "user": "unknown"
@@ -24,16 +36,17 @@
     {
         "dimensions": {
             "batch": "n",
-            "business_unit_id": "team-b",
+            "business_unit_id": "unknown",
             "error_code": "n",
             "gateway": "litellm",
-            "hosted_env": "unknown",
+            "hosted_env": "agent1",
             "key_name": "filipe-test-2",
             "model": "gpt-4o",
             "platform": "openai",
             "provider": "openai",
             "region": "global",
             "sku": "gpt-4o-2024-08-06",
+            "team": "team-b",
             "tier": "n",
             "usecase": "acompletion",
             "user": "unknown"
@@ -46,16 +59,17 @@
     {
         "dimensions": {
             "batch": "n",
-            "business_unit_id": "team-b",
+            "business_unit_id": "unknown",
             "cache": "n",
             "gateway": "litellm",
-            "hosted_env": "unknown",
+            "hosted_env": "agent1",
             "key_name": "filipe-test-2",
             "model": "gpt-4o",
             "platform": "openai",
             "provider": "openai",
             "region": "global",
             "sku": "gpt-4o-2024-08-06",
+            "team": "team-b",
             "tier": "n",
             "type": "in",
             "usecase": "acompletion",
@@ -69,16 +83,17 @@
     {
         "dimensions": {
             "batch": "n",
-            "business_unit_id": "team-b",
+            "business_unit_id": "unknown",
             "cache": "n",
             "gateway": "litellm",
-            "hosted_env": "unknown",
+            "hosted_env": "agent1",
             "key_name": "filipe-test-2",
             "model": "gpt-4o",
             "platform": "openai",
             "provider": "openai",
             "region": "global",
             "sku": "gpt-4o-2024-08-06",
+            "team": "team-b",
             "tier": "n",
             "type": "out",
             "usecase": "acompletion",

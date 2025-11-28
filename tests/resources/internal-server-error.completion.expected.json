@@ -1,17 +1,29 @@
 [
     {
         "dimensions": {
+            "label": "Team B",
+            "name": "team",
+            "type": "virtual_tag",
+            "value": "team-b"
+        },
+        "meterApiName": "aflo.object_metadata",
+        "meterTimeInMillis": 1762979660024,
+        "meterValue": 1
+    },
+    {
+        "dimensions": {
             "batch": "n",
-            "business_unit_id": "team-b",
+            "business_unit_id": "unknown",
             "error_code": "500",
             "gateway": "litellm",
-            "hosted_env": "unknown",
+            "hosted_env": "agent1",
             "key_name": "team-b-key",
             "model": "gpt-4o-mini",
             "platform": "unknown",
             "provider": "openai",
             "region": "global",
             "sku": "unknown",
+            "team": "team-b",
             "tier": "n",
             "usecase": "acompletion",
             "user": "unknown"
@@ -24,16 +36,17 @@
     {
         "dimensions": {
             "batch": "n",
-            "business_unit_id": "team-b",
+            "business_unit_id": "unknown",
             "error_code": "500",
             "gateway": "litellm",
-            "hosted_env": "unknown",
+            "hosted_env": "agent1",
             "key_name": "team-b-key",
             "model": "gpt-4o-mini",
             "platform": "unknown",
             "provider": "openai",
             "region": "global",
             "sku": "unknown",
+            "team": "team-b",
             "tier": "n",
             "usecase": "acompletion",
             "user": "unknown"
@@ -45,16 +58,17 @@
     },
     {
         "dimensions": {
-            "business_unit_id": "team-b",
+            "business_unit_id": "unknown",
             "class": "AuthenticationError",
             "code": "500",
             "gateway": "litellm",
-            "hosted_env": "unknown",
+            "hosted_env": "agent1",
             "key_name": "team-b-key",
             "model": "gpt-4o-mini",
             "platform": "unknown",
             "provider": "openai",
             "region": "global",
+            "team": "team-b",
             "usecase": "acompletion",
             "user": "unknown"
         },
