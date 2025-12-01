@@ -3,19 +3,19 @@
     "cache_hit": null,
     "cache_key": null,
     "call_type": "acompletion",
-    "completionStartTime": 1761765129.735778,
-    "completion_tokens": 1,
+    "completionStartTime": 1764355426.431805,
+    "completion_tokens": 2,
     "cost_breakdown": {
         "discount_amount": 0.0,
         "discount_percent": 0.0,
         "input_cost": 2.75e-05,
-        "original_cost": 3.7500000000000003e-05,
-        "output_cost": 1e-05,
+        "original_cost": 4.75e-05,
+        "output_cost": 2e-05,
         "tool_usage_cost": 0.0,
-        "total_cost": 3.7500000000000003e-05
+        "total_cost": 4.75e-05
     },
     "custom_llm_provider": "openai",
-    "endTime": 1761765129.735778,
+    "endTime": 1764355426.431805,
     "end_user": "",
     "error_information": {
         "error_class": "",
@@ -37,12 +37,12 @@
         "batch_models": null,
         "cache_key": null,
         "litellm_model_name": "gpt-4o",
-        "litellm_overhead_time_ms": 22.728,
-        "model_id": "ceeb65bc-e37a-422b-afcd-042be0650162",
-        "response_cost": 3.7500000000000003e-05,
+        "litellm_overhead_time_ms": 23.191,
+        "model_id": "e78e6819-ff4e-4db6-8126-99157a2ff4a9",
+        "response_cost": 4.75e-05,
         "usage_object": null
     },
-    "id": "chatcmpl-CW5sXJGBkMjQ90ZzhqQdhB5kGt9E3",
+    "id": "chatcmpl-CgxjVZ2Arybj6m2I06mECrYBfGxw1",
     "messages": [
         {
             "content": "redacted-by-litellm",
@@ -59,7 +59,7 @@
         "requester_metadata": {},
         "spend_logs_metadata": null,
         "usage_object": {
-            "completion_tokens": 1,
+            "completion_tokens": 2,
             "completion_tokens_details": {
                 "accepted_prediction_tokens": 0,
                 "audio_tokens": 0,
@@ -74,17 +74,19 @@
                 "image_tokens": null,
                 "text_tokens": null
             },
-            "total_tokens": 12
+            "total_tokens": 13
         },
-        "user_api_key_alias": "filipe-test",
-        "user_api_key_auth_metadata": {},
+        "user_api_key_alias": "user-key",
+        "user_api_key_auth_metadata": {
+            "business_unit_id": "engineering"
+        },
         "user_api_key_budget_reset_at": null,
         "user_api_key_end_user_id": null,
-        "user_api_key_hash": "358f6a4022698a9c77dc2a4e551b04e08da9a3c541d8e8828617dd898f1d658f",
+        "user_api_key_hash": "afa9db8e20ff47baa7a432bb810d9bb7ff5d7b727ad889558fea368e166a3486",
         "user_api_key_max_budget": null,
         "user_api_key_org_id": null,
         "user_api_key_request_route": "/v1/chat/completions",
-        "user_api_key_spend": 0.0007500000000000002,
+        "user_api_key_spend": 0.0,
         "user_api_key_team_alias": null,
         "user_api_key_team_id": null,
         "user_api_key_user_email": null,
@@ -93,7 +95,7 @@
     },
     "model": "gpt-4o",
     "model_group": "gpt-4o",
-    "model_id": "ceeb65bc-e37a-422b-afcd-042be0650162",
+    "model_id": "e78e6819-ff4e-4db6-8126-99157a2ff4a9",
     "model_map_information": {
         "model_map_key": "gpt-4o-2024-08-06",
         "model_map_value": {
@@ -133,6 +135,7 @@
             "output_cost_per_token_batches": 5e-06,
             "output_cost_per_token_flex": null,
             "output_cost_per_token_priority": null,
+            "output_cost_per_video_per_second": null,
             "output_vector_size": null,
             "rpm": null,
             "search_context_cost_per_query": null,
@@ -199,21 +202,21 @@
     "response": {
         "text": "redacted-by-litellm"
     },
-    "response_cost": 3.7500000000000003e-05,
+    "response_cost": 4.75e-05,
     "response_cost_failure_debug_info": null,
-    "response_time": 1.6729440689086914,
+    "response_time": 3.490752935409546,
     "saved_cache_cost": 0.0,
     "standard_built_in_tools_params": {
         "file_search": null,
         "web_search_options": null
     },
-    "startTime": 1761765128.062834,
+    "startTime": 1764355422.941052,
     "status": "success",
     "status_fields": {
         "guardrail_status": "not_run",
         "llm_api_status": "success"
     },
     "stream": null,
-    "total_tokens": 12,
-    "trace_id": "06da8991-d8d1-485f-beaa-4b1fd579bb8b"
+    "total_tokens": 13,
+    "trace_id": "71ad8a19-90c3-44a7-bc3e-b2c35a0ef3d1"
 }

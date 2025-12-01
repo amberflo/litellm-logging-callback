@@ -1,92 +1,106 @@
 [
     {
         "dimensions": {
+            "id": "engineering",
+            "name": "engineering",
+            "type": "business_unit"
+        },
+        "meterApiName": "aflo.object_metadata",
+        "meterTimeInMillis": 1764355422941,
+        "meterValue": 1
+    },
+    {
+        "dimensions": {
             "batch": "n",
-            "business_unit_id": "unknown",
+            "business_unit_id": "engineering",
             "error_code": "n",
             "gateway": "litellm",
-            "hosted_env": "unknown",
-            "key_name": "filipe-test",
+            "hosted_env": "agent1",
+            "key_name": "user-key",
             "model": "gpt-4o",
             "platform": "openai",
             "provider": "openai",
             "region": "global",
             "sku": "gpt-4o-2024-08-06",
+            "team": "unknown",
             "tier": "n",
             "usecase": "acompletion",
             "user": "default_user_id"
         },
         "meterApiName": "llm_api_call",
-        "meterTimeInMillis": 1761765128063,
+        "meterTimeInMillis": 1764355422941,
         "meterValue": 1,
-        "uniqueId": "chatcmpl-CW5sXJGBkMjQ90ZzhqQdhB5kGt9E3"
+        "uniqueId": "chatcmpl-CgxjVZ2Arybj6m2I06mECrYBfGxw1"
     },
     {
         "dimensions": {
             "batch": "n",
-            "business_unit_id": "unknown",
+            "business_unit_id": "engineering",
             "error_code": "n",
             "gateway": "litellm",
-            "hosted_env": "unknown",
-            "key_name": "filipe-test",
+            "hosted_env": "agent1",
+            "key_name": "user-key",
             "model": "gpt-4o",
             "platform": "openai",
             "provider": "openai",
             "region": "global",
             "sku": "gpt-4o-2024-08-06",
+            "team": "unknown",
             "tier": "n",
             "usecase": "acompletion",
             "user": "default_user_id"
         },
         "meterApiName": "llm_api_call_ms",
-        "meterTimeInMillis": 1761765128063,
-        "meterValue": 1673,
-        "uniqueId": "chatcmpl-CW5sXJGBkMjQ90ZzhqQdhB5kGt9E3"
+        "meterTimeInMillis": 1764355422941,
+        "meterValue": 3491,
+        "uniqueId": "chatcmpl-CgxjVZ2Arybj6m2I06mECrYBfGxw1"
     },
     {
         "dimensions": {
             "batch": "n",
-            "business_unit_id": "unknown",
+            "business_unit_id": "engineering",
             "cache": "n",
             "gateway": "litellm",
-            "hosted_env": "unknown",
-            "key_name": "filipe-test",
+            "hosted_env": "agent1",
+            "key_name": "user-key",
             "model": "gpt-4o",
             "platform": "openai",
             "provider": "openai",
             "region": "global",
             "sku": "gpt-4o-2024-08-06",
+            "team": "unknown",
             "tier": "n",
             "type": "in",
             "usecase": "acompletion",
             "user": "default_user_id"
         },
         "meterApiName": "llm_text_tokens",
-        "meterTimeInMillis": 1761765128063,
+        "meterTimeInMillis": 1764355422941,
         "meterValue": 11,
-        "uniqueId": "chatcmpl-CW5sXJGBkMjQ90ZzhqQdhB5kGt9E3"
+        "uniqueId": "chatcmpl-CgxjVZ2Arybj6m2I06mECrYBfGxw1"
     },
     {
         "dimensions": {
             "batch": "n",
-            "business_unit_id": "unknown",
+            "business_unit_id": "engineering",
             "cache": "n",
             "gateway": "litellm",
-            "hosted_env": "unknown",
-            "key_name": "filipe-test",
+            "hosted_env": "agent1",
+            "key_name": "user-key",
             "model": "gpt-4o",
             "platform": "openai",
             "provider": "openai",
             "region": "global",
             "sku": "gpt-4o-2024-08-06",
+            "team": "unknown",
             "tier": "n",
             "type": "out",
             "usecase": "acompletion",
             "user": "default_user_id"
         },
         "meterApiName": "llm_text_tokens",
-        "meterTimeInMillis": 1761765128063,
-        "meterValue": 1,
-        "uniqueId": "chatcmpl-CW5sXJGBkMjQ90ZzhqQdhB5kGt9E3"
+        "meterTimeInMillis": 1764355422941,
+        "meterValue": 2,
+        "uniqueId": "chatcmpl-CgxjVZ2Arybj6m2I06mECrYBfGxw1"
     }
 ]
