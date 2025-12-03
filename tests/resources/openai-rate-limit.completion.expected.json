@@ -1,8 +1,20 @@
 [
     {
         "dimensions": {
+            "id": "team-c",
+            "name": "Team C",
+            "type": "business_unit"
+        },
+        "meterApiName": "aflo.object_metadata",
+        "meterTimeInMillis": 1763041674153,
+        "meterValue": 1
+    },
+    {
+        "dimensions": {
             "label": "Team C",
             "name": "team",
+            "parentName": "businessUnitId",
+            "parentValue": "team-c",
             "type": "virtual_tag",
             "value": "team-c"
         },
@@ -13,7 +25,7 @@
     {
         "dimensions": {
             "batch": "n",
-            "business_unit_id": "unknown",
+            "business_unit_id": "team-c",
             "error_code": "429",
             "gateway": "litellm",
             "hosted_env": "agent1",
@@ -36,7 +48,7 @@
     {
         "dimensions": {
             "batch": "n",
-            "business_unit_id": "unknown",
+            "business_unit_id": "team-c",
             "error_code": "429",
             "gateway": "litellm",
             "hosted_env": "agent1",
@@ -58,7 +70,7 @@
     },
     {
         "dimensions": {
-            "business_unit_id": "unknown",
+            "business_unit_id": "team-c",
             "class": "RateLimitError",
             "code": "429",
             "gateway": "litellm",

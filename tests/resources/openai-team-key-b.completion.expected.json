@@ -1,8 +1,20 @@
 [
     {
         "dimensions": {
+            "id": "team-b",
+            "name": "Team B",
+            "type": "business_unit"
+        },
+        "meterApiName": "aflo.object_metadata",
+        "meterTimeInMillis": 1762786049138,
+        "meterValue": 1
+    },
+    {
+        "dimensions": {
             "label": "Team B",
             "name": "team",
+            "parentName": "businessUnitId",
+            "parentValue": "team-b",
             "type": "virtual_tag",
             "value": "team-b"
         },
@@ -13,7 +25,7 @@
     {
         "dimensions": {
             "batch": "n",
-            "business_unit_id": "unknown",
+            "business_unit_id": "team-b",
             "error_code": "n",
             "gateway": "litellm",
             "hosted_env": "agent1",
@@ -36,7 +48,7 @@
     {
         "dimensions": {
             "batch": "n",
-            "business_unit_id": "unknown",
+            "business_unit_id": "team-b",
             "error_code": "n",
             "gateway": "litellm",
             "hosted_env": "agent1",
@@ -59,7 +71,7 @@
     {
         "dimensions": {
             "batch": "n",
-            "business_unit_id": "unknown",
+            "business_unit_id": "team-b",
             "cache": "n",
             "gateway": "litellm",
             "hosted_env": "agent1",
@@ -83,7 +95,7 @@
     {
         "dimensions": {
             "batch": "n",
-            "business_unit_id": "unknown",
+            "business_unit_id": "team-b",
             "cache": "n",
             "gateway": "litellm",
             "hosted_env": "agent1",

@@ -163,7 +163,7 @@ def _get_bu_and_team(metadata):
     bu_id = metadata.get("user_api_key_auth_metadata", {}).get("business_unit_id")
     team_id = metadata.get("user_api_key_team_id")
 
-    return bu_id or _unknown, team_id or _unknown
+    return bu_id or team_id or _unknown, team_id or _unknown
 
 
 def _get_object_metadata(metadata):
@@ -171,12 +171,14 @@ def _get_object_metadata(metadata):
     team_id = metadata.get("user_api_key_team_id")
 
     if bu_id and team_id:
+        team_alias = metadata.get("user_api_key_team_alias")
+
         return [
             {
                 "type": "virtual_tag",
                 "name": "team",
-                "value": metadata.get("user_api_key_team_id"),
-                "label": metadata.get("user_api_key_team_alias"),
+                "value": team_id,
+                "label": team_alias,
                 "parentName": "businessUnitId",
                 "parentValue": bu_id,
             }
@@ -192,13 +194,22 @@ def _get_object_metadata(metadata):
         ]
 
     if team_id:
+        team_alias = metadata.get("user_api_key_team_alias")
+
         return [
+            {
+                "type": "business_unit",
+                "id": team_id,
+                "name": team_alias,
+            },
             {
                 "type": "virtual_tag",
                 "name": "team",
-                "value": metadata.get("user_api_key_team_id"),
-                "label": metadata.get("user_api_key_team_alias"),
-            }
+                "value": team_id,
+                "label": team_alias,
+                "parentName": "businessUnitId",
+                "parentValue": team_id,
+            },
         ]
 
     return []
