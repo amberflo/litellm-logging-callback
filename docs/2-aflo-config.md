@@ -31,7 +31,7 @@ Amberflo can write meter events either to an AWS S3 bucket or Azure Blob contain
 
 ## Sample Configuration
 
-```yaml
+```env
 # for api
 AFLO_BACKEND_TYPE=api
 AFLO_API_KEY=...
