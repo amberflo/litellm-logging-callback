@@ -1,5 +1,5 @@
-
 # Amberflo Callback Configuration
+
 Amberflo can write meter events either to an AWS S3 bucket or Azure Blob container.
 
 ## Environment Variables
@@ -29,45 +29,34 @@ Amberflo can write meter events either to an AWS S3 bucket or Azure Blob contain
 | `AFLO_MAX_BUFFER_SIZE` | No | `10000` | Maximum number of events to buffer in memory |
 | `AFLO_SEND_OBJECT_METADATA` | No | `false` | Creates business units and `team` virtual tags in Amberflo |
 
-### API env file
-```YAML
+## Sample Configuration
+
+```yaml
+# for api
 AFLO_BACKEND_TYPE=api
 AFLO_API_KEY=...
-AFLO_API_ENDPOINT=https://ingest.amberflo.io
-AFLO_HOSTED_ENV=prod
-AFLO_JSON_LOGS=false
-AFLO_DEBUG=false
-AFLO_BATCH_SIZE=100
-AFLO_FLUSH_INTERVAL=300 # 5 minutes
-AFLO_MAX_BUFFER_SIZE=10000 # optional
-```
 
-### AWS S3 env file
-```YAML
+# for aws s3
 AFLO_BACKEND_TYPE=s3
+AFLO_BUCKET_NAME=...
+
+AFLO_PATH=litellm-metering
+
 AWS_ACCESS_KEY_ID=...
 AWS_SECRET_ACCESS_KEY=...
 AWS_REGION=...
-AFLO_BUCKET_NAME=...
-AFLO_PATH=litellm-metering
-AFLO_HOSTED_ENV=prod
-AFLO_JSON_LOGS=false
-AFLO_DEBUG=false
-AFLO_BATCH_SIZE=100
-AFLO_FLUSH_INTERVAL=300 # 5 minutes
-AFLO_MAX_BUFFER_SIZE=10000 # optional
-```
 
-### Azure Blob env file
-```YAML
+# for azure blob
 AFLO_BACKEND_TYPE=azure-blob
-AZURE_STORAGE_CONNECTION_STRING=...
 AFLO_CONTAINER_NAME=...
+
 AFLO_PATH=litellm-metering
-AFLO_HOSTED_ENV=prod
-AFLO_JSON_LOGS=false
-AFLO_DEBUG=false
-AFLO_BATCH_SIZE=100
-AFLO_FLUSH_INTERVAL=300 # 5 minutes
-AFLO_MAX_BUFFER_SIZE=10000 # optional
+
+AZURE_STORAGE_CONNECTION_STRING=...
+
+# common configs
+AFLO_HOSTED_ENV=testing
+AFLO_BATCH_SIZE=10
+AFLO_FLUSH_INTERVAL=30
+AFLO_SEND_OBJECT_METADATA=true
 ```
