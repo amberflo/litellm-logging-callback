@@ -18,9 +18,47 @@ jobs:
         run: |
           zip -r amberflo.zip amberflo
 
+      # github release
+
       - name: Upload artifact to release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release upload ${{ github.event.release.tag_name }} amberflo.zip --clobber
           gh release upload ${{ github.event.release.tag_name }} templates/config.demo-api.env --clobber
+
+      # dev assets
+
+      - name: Configure AWS credentials (dev)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Publish files to asset server (dev)
+        env:
+          ENV: dev
+        run: |
+          for f in amberflo.zip templates/config.demo-api.env
+          do
+            aws s3 cp $f s3://amberflo-static-assets-us-east-1-$ENV/litellm/latest/$f
+          done
+
+      # prod assets
+
+      - name: Configure AWS credentials (prod)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_PROD }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_PROD }}
+          aws-region: us-east-1
+
+      - name: Publish files to asset server (prod)
+        env:
+          ENV: prod
+        run: |
+          for f in amberflo.zip templates/config.demo-api.env
+          do
+            aws s3 cp $f s3://amberflo-static-assets-us-east-1-$ENV/litellm/latest/$f
+          done
