@@ -46,6 +46,9 @@ class TestTransformer(unittest.TestCase):
             "internal-server-error.completion",
             "team-rate-limit.completion",
             "openai-rate-limit.completion",
+            # guardrail errors
+            "openai-guardrail-failure.completion",
+            "litellm-guardrail-failure.completion",
             # image gen
             "bedrock-stability-v1.image_gen",
             "openai-gpt-image-1.image_gen",
