@@ -282,6 +282,15 @@ def _extract_error_details(error_info):
 
                 error["limit"] = match.group(3)
 
+    elif error["code"] == "400":
+        message = error_info["error_message"]
+
+        if message.startswith("400: {'error': 'Content blocked: "):
+            error["guardrail"] = "litellm-content-filter"
+
+        elif message.startswith("400: {'error': 'Violated OpenAI moderation policy'"):
+            error["guardrail"] = "openai-moderation"
+
     return error
 
 

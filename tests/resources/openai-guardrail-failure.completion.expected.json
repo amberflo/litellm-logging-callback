@@ -1,0 +1,93 @@
+[
+    {
+        "dimensions": {
+            "id": "litellm-dashboard",
+            "name": null,
+            "type": "business_unit"
+        },
+        "meterApiName": "aflo.object_metadata",
+        "meterTimeInMillis": 1765822042604,
+        "meterValue": 1
+    },
+    {
+        "dimensions": {
+            "label": null,
+            "name": "team",
+            "parentName": "businessUnitId",
+            "parentValue": "litellm-dashboard",
+            "type": "virtual_tag",
+            "value": "litellm-dashboard"
+        },
+        "meterApiName": "aflo.object_metadata",
+        "meterTimeInMillis": 1765822042604,
+        "meterValue": 1
+    },
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "litellm-dashboard",
+            "error_code": "400",
+            "gateway": "litellm",
+            "hosted_env": "agent1",
+            "key_name": "unknown",
+            "model": "gpt-4o-mini",
+            "platform": "unknown",
+            "provider": null,
+            "region": "global",
+            "sku": "unknown",
+            "team": "litellm-dashboard",
+            "tier": "n",
+            "usecase": "acompletion",
+            "user": "default_user_id"
+        },
+        "meterApiName": "llm_api_call",
+        "meterTimeInMillis": 1765822042604,
+        "meterValue": 1,
+        "uniqueId": "2ff3764a-601a-4cfb-a5e8-d5e6a9e50dee"
+    },
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "litellm-dashboard",
+            "error_code": "400",
+            "gateway": "litellm",
+            "hosted_env": "agent1",
+            "key_name": "unknown",
+            "model": "gpt-4o-mini",
+            "platform": "unknown",
+            "provider": null,
+            "region": "global",
+            "sku": "unknown",
+            "team": "litellm-dashboard",
+            "tier": "n",
+            "usecase": "acompletion",
+            "user": "default_user_id"
+        },
+        "meterApiName": "llm_api_call_ms",
+        "meterTimeInMillis": 1765822042604,
+        "meterValue": 2004,
+        "uniqueId": "2ff3764a-601a-4cfb-a5e8-d5e6a9e50dee"
+    },
+    {
+        "dimensions": {
+            "business_unit_id": "litellm-dashboard",
+            "class": "HTTPException",
+            "code": "400",
+            "gateway": "litellm",
+            "guardrail": "openai-moderation",
+            "hosted_env": "agent1",
+            "key_name": "unknown",
+            "model": "gpt-4o-mini",
+            "platform": "unknown",
+            "provider": null,
+            "region": "global",
+            "team": "litellm-dashboard",
+            "usecase": "acompletion",
+            "user": "default_user_id"
+        },
+        "meterApiName": "llm_error_details",
+        "meterTimeInMillis": 1765822042604,
+        "meterValue": 1,
+        "uniqueId": "2ff3764a-601a-4cfb-a5e8-d5e6a9e50dee"
+    }
+]

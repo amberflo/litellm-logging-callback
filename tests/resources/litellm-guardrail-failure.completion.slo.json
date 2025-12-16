@@ -1,0 +1,118 @@
+{
+    "api_base": "",
+    "cache_hit": false,
+    "cache_key": null,
+    "call_type": "acompletion",
+    "completionStartTime": 1765822297.493972,
+    "completion_tokens": 0,
+    "cost_breakdown": null,
+    "custom_llm_provider": null,
+    "endTime": 1765822297.493972,
+    "end_user": "",
+    "error_information": {
+        "error_class": "HTTPException",
+        "error_code": "400",
+        "error_message": "400: {'error': 'Content blocked: us_ssn pattern detected', 'pattern': 'us_ssn'}",
+        "llm_provider": "",
+        "traceback": "  File \"/usr/lib/python3.13/site-packages/litellm/proxy/proxy_server.py\", line 4915, in chat_completion\n    result = await base_llm_response_processor.base_process_llm_request(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<16 lines>...\n    )\n    ^\n  File \"/usr/lib/python3.13/site-packages/litellm/proxy/common_request_processing.py\", line 492, in base_process_llm_request\n    self.data, logging_obj = await self.common_processing_pre_call_logic(\n                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<14 lines>...\n    )\n    ^\n  File \"/usr/lib/python3.13/site-packages/litellm/proxy/common_request_processing.py\", line 413, in common_processing_pre_call_logic\n    self.data = await proxy_logging_obj.pre_call_hook(  # type: ignore\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        user_api_key_dict=user_api_key_dict, data=self.data, call_type=route_type  # type: ignore\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/usr/lib/python3.13/site-packages/litellm/proxy/utils.py\", line 1031, in pre_call_hook\n    raise e\n  File \"/usr/lib/python3.13/site-packages/litellm/proxy/utils.py\", line 981, in pre_call_hook\n    result = await self._process_guardrail_callback(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<4 lines>...\n    )\n    ^\n  File \"/usr/lib/python3.13/site-packages/litellm/proxy/utils.py\", line 804, in _process_guardrail_callback\n    response = await unified_guardrail.async_pre_call_hook(\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<4 lines>...\n    )\n    ^\n  File \"/usr/lib/python3.13/site-packages/litellm/proxy/guardrails/guardrail_hooks/unified_guardrail/unified_guardrail.py\", line 87, in async_pre_call_hook\n    data = await endpoint_translation.process_input_messages(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<3 lines>...\n    )\n    ^\n  File \"/usr/lib/python3.13/site-packages/litellm/llms/openai/chat/guardrail_translation/handler.py\", line 88, in process_input_messages\n    guardrailed_inputs = await guardrail_to_apply.apply_guardrail(\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<4 lines>...\n    )\n    ^\n  File \"/usr/lib/python3.13/site-packages/litellm/proxy/guardrails/guardrail_hooks/litellm_content_filter/content_filter.py\", line 348, in apply_guardrail\n    raise HTTPException(\n    ...<2 lines>...\n    )\n"
+    },
+    "error_str": "400: {'error': 'Content blocked: us_ssn pattern detected', 'pattern': 'us_ssn'}",
+    "guardrail_information": null,
+    "hidden_params": {
+        "additional_headers": null,
+        "api_base": null,
+        "batch_models": null,
+        "cache_key": null,
+        "litellm_model_name": null,
+        "litellm_overhead_time_ms": null,
+        "model_id": null,
+        "response_cost": null,
+        "usage_object": null
+    },
+    "id": "c48a5f30-d7c6-4cf2-bd10-2eae3156838e",
+    "messages": [
+        {
+            "content": "redacted-by-litellm",
+            "role": "user"
+        }
+    ],
+    "metadata": {
+        "applied_guardrails": [],
+        "cold_storage_object_key": null,
+        "mcp_tool_call_metadata": null,
+        "prompt_management_metadata": null,
+        "requester_custom_headers": {
+            "x-stainless-arch": "unknown",
+            "x-stainless-lang": "js",
+            "x-stainless-os": "Unknown",
+            "x-stainless-package-version": "4.104.0",
+            "x-stainless-retry-count": "0",
+            "x-stainless-runtime": "browser:chrome",
+            "x-stainless-runtime-version": "142.0.0",
+            "x-stainless-timeout": "600"
+        },
+        "requester_ip_address": "",
+        "requester_metadata": {},
+        "spend_logs_metadata": null,
+        "usage_object": {
+            "completion_tokens": 0,
+            "completion_tokens_details": null,
+            "prompt_tokens": 0,
+            "prompt_tokens_details": null,
+            "total_tokens": 0
+        },
+        "user_api_key_alias": null,
+        "user_api_key_auth_metadata": {},
+        "user_api_key_budget_reset_at": null,
+        "user_api_key_end_user_id": null,
+        "user_api_key_hash": "c394e5aacdfcd55e649030e0b9aa5ad79eac5f7defff02b97b06a54853f9edf7",
+        "user_api_key_max_budget": 10.0,
+        "user_api_key_org_id": null,
+        "user_api_key_request_route": "/chat/completions",
+        "user_api_key_spend": 0.009954750000000002,
+        "user_api_key_team_alias": null,
+        "user_api_key_team_id": "litellm-dashboard",
+        "user_api_key_user_email": null,
+        "user_api_key_user_id": "default_user_id",
+        "vector_store_request_metadata": null
+    },
+    "model": "gpt-4o-mini",
+    "model_group": "",
+    "model_id": "",
+    "model_map_information": {
+        "model_map_key": "",
+        "model_map_value": null
+    },
+    "model_parameters": {
+        "stream": true,
+        "stream_options": {
+            "include_usage": true
+        }
+    },
+    "prompt_tokens": 0,
+    "request_tags": [
+        "User-Agent: Mozilla",
+        "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+    ],
+    "requester_ip_address": "",
+    "response": {
+        "text": "redacted-by-litellm"
+    },
+    "response_cost": 0.0,
+    "response_cost_failure_debug_info": null,
+    "response_time": 0.0022721290588378906,
+    "saved_cache_cost": 0.0,
+    "standard_built_in_tools_params": {
+        "file_search": null,
+        "web_search_options": null
+    },
+    "startTime": 1765822297.4917,
+    "status": "failure",
+    "status_fields": {
+        "guardrail_status": "not_run",
+        "llm_api_status": "failure"
+    },
+    "stream": null,
+    "total_tokens": 0,
+    "trace_id": "8b34380a-feb4-4695-a765-6e80254a1b9a"
+}
