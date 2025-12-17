@@ -49,6 +49,8 @@ class TestTransformer(unittest.TestCase):
             # guardrail errors
             "openai-guardrail-failure.completion",
             "litellm-guardrail-failure.completion",
+            # other errors
+            "proxy-authz-error.completion",
             # image gen
             "bedrock-stability-v1.image_gen",
             "openai-gpt-image-1.image_gen",

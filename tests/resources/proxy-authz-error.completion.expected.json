@@ -1,0 +1,69 @@
+[
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "unknown",
+            "error_code": "401",
+            "gateway": "litellm",
+            "hosted_env": "agent1",
+            "key_name": "unknown",
+            "model": "gpt-5-nano",
+            "platform": "unknown",
+            "provider": null,
+            "region": "global",
+            "sku": "unknown",
+            "team": "unknown",
+            "tier": "n",
+            "usecase": "/v1/chat/completions",
+            "user": "unknown"
+        },
+        "meterApiName": "llm_api_call",
+        "meterTimeInMillis": 1766001469198,
+        "meterValue": 1,
+        "uniqueId": "d178c151-3d6c-44b4-8573-a273fa9429fa"
+    },
+    {
+        "dimensions": {
+            "batch": "n",
+            "business_unit_id": "unknown",
+            "error_code": "401",
+            "gateway": "litellm",
+            "hosted_env": "agent1",
+            "key_name": "unknown",
+            "model": "gpt-5-nano",
+            "platform": "unknown",
+            "provider": null,
+            "region": "global",
+            "sku": "unknown",
+            "team": "unknown",
+            "tier": "n",
+            "usecase": "/v1/chat/completions",
+            "user": "unknown"
+        },
+        "meterApiName": "llm_api_call_ms",
+        "meterTimeInMillis": 1766001469198,
+        "meterValue": 0,
+        "uniqueId": "d178c151-3d6c-44b4-8573-a273fa9429fa"
+    },
+    {
+        "dimensions": {
+            "business_unit_id": "unknown",
+            "class": "ProxyException",
+            "code": "401",
+            "gateway": "litellm",
+            "hosted_env": "agent1",
+            "key_name": "unknown",
+            "model": "gpt-5-nano",
+            "platform": "unknown",
+            "provider": null,
+            "region": "global",
+            "team": "unknown",
+            "usecase": "/v1/chat/completions",
+            "user": "unknown"
+        },
+        "meterApiName": "llm_error_details",
+        "meterTimeInMillis": 1766001469198,
+        "meterValue": 1,
+        "uniqueId": "d178c151-3d6c-44b4-8573-a273fa9429fa"
+    }
+]

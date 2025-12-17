@@ -291,6 +291,12 @@ def _extract_error_details(error_info):
         elif message.startswith("400: {'error': 'Violated OpenAI moderation policy'"):
             error["guardrail"] = "openai-moderation"
 
+    if error["class"] == "ProxyException" and "_can_object_call_model" in error_info["traceback"]:
+        error["code"] = "401"
+
+    if not error["code"]:
+        error["code"] = _unknown
+
     return error
 
 
