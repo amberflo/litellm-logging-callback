@@ -1,0 +1,119 @@
+[
+    {
+        "meterApiName": "aflo.object_metadata",
+        "meterValue": 1,
+        "meterTimeInMillis": 1767988453954,
+        "dimensions": {
+            "type": "business_unit",
+            "id": "464bfafe-3e82-456b-ae9c-cb06174d5ad8",
+            "name": "Dev Team"
+        }
+    },
+    {
+        "meterApiName": "aflo.object_metadata",
+        "meterValue": 1,
+        "meterTimeInMillis": 1767988453954,
+        "dimensions": {
+            "type": "virtual_tag",
+            "name": "team",
+            "value": "464bfafe-3e82-456b-ae9c-cb06174d5ad8",
+            "label": "Dev Team",
+            "parentName": "businessUnitId",
+            "parentValue": "464bfafe-3e82-456b-ae9c-cb06174d5ad8"
+        }
+    },
+    {
+        "meterTimeInMillis": 1767988453954,
+        "uniqueId": "chatcmpl-48aac127-53dd-49d2-8f38-3a0e93eb175d",
+        "meterApiName": "llm_api_call",
+        "meterValue": 1,
+        "dimensions": {
+            "business_unit_id": "464bfafe-3e82-456b-ae9c-cb06174d5ad8",
+            "team": "464bfafe-3e82-456b-ae9c-cb06174d5ad8",
+            "hosted_env": "agent1",
+            "key_name": "for-dev-purpose",
+            "model": "claude-opus-4-5",
+            "platform": "anthropic",
+            "provider": "anthropic",
+            "region": "global",
+            "usecase": "acompletion",
+            "user": "default_user_id",
+            "gateway": "litellm",
+            "sku": "claude-opus-4-5-20251101",
+            "tier": "n",
+            "batch": "n",
+            "error_code": "n"
+        }
+    },
+    {
+        "meterTimeInMillis": 1767988453954,
+        "uniqueId": "chatcmpl-48aac127-53dd-49d2-8f38-3a0e93eb175d",
+        "meterApiName": "llm_api_call_ms",
+        "meterValue": 2303,
+        "dimensions": {
+            "business_unit_id": "464bfafe-3e82-456b-ae9c-cb06174d5ad8",
+            "team": "464bfafe-3e82-456b-ae9c-cb06174d5ad8",
+            "hosted_env": "agent1",
+            "key_name": "for-dev-purpose",
+            "model": "claude-opus-4-5",
+            "platform": "anthropic",
+            "provider": "anthropic",
+            "region": "global",
+            "usecase": "acompletion",
+            "user": "default_user_id",
+            "gateway": "litellm",
+            "sku": "claude-opus-4-5-20251101",
+            "tier": "n",
+            "batch": "n",
+            "error_code": "n"
+        }
+    },
+    {
+        "meterTimeInMillis": 1767988453954,
+        "uniqueId": "chatcmpl-48aac127-53dd-49d2-8f38-3a0e93eb175d",
+        "meterApiName": "llm_text_tokens",
+        "meterValue": 11,
+        "dimensions": {
+            "business_unit_id": "464bfafe-3e82-456b-ae9c-cb06174d5ad8",
+            "team": "464bfafe-3e82-456b-ae9c-cb06174d5ad8",
+            "hosted_env": "agent1",
+            "key_name": "for-dev-purpose",
+            "model": "claude-opus-4-5",
+            "platform": "anthropic",
+            "provider": "anthropic",
+            "region": "global",
+            "usecase": "acompletion",
+            "user": "default_user_id",
+            "gateway": "litellm",
+            "sku": "claude-opus-4-5-20251101",
+            "tier": "n",
+            "batch": "n",
+            "type": "in",
+            "cache": "n"
+        }
+    },
+    {
+        "meterTimeInMillis": 1767988453954,
+        "uniqueId": "chatcmpl-48aac127-53dd-49d2-8f38-3a0e93eb175d",
+        "meterApiName": "llm_text_tokens",
+        "meterValue": 8,
+        "dimensions": {
+            "business_unit_id": "464bfafe-3e82-456b-ae9c-cb06174d5ad8",
+            "team": "464bfafe-3e82-456b-ae9c-cb06174d5ad8",
+            "hosted_env": "agent1",
+            "key_name": "for-dev-purpose",
+            "model": "claude-opus-4-5",
+            "platform": "anthropic",
+            "provider": "anthropic",
+            "region": "global",
+            "usecase": "acompletion",
+            "user": "default_user_id",
+            "gateway": "litellm",
+            "sku": "claude-opus-4-5-20251101",
+            "tier": "n",
+            "batch": "n",
+            "type": "out",
+            "cache": "n"
+        }
+    }
+]

@@ -35,6 +35,7 @@ class TestTransformer(unittest.TestCase):
     def test_transformer_produces_events(self):
         cases = [
             # text completion
+            "anthropic-claude-opus-4-5.completion",
             "bedrock-anthropic-claude-haiku.completion",
             "openai-gpt-4o.completion",
             "openai-text-embedding-ada-002.embedding",
