@@ -35,6 +35,9 @@ call GET 'v1/models'
 # openai text embeddings
 #call POST 'v1/embeddings' -d '{ "model": "text-embedding-ada-002", "input": "The quick brown fox jumps over the lazy dog" }'
 
+# anthropic (native) text completion
+#call POST 'v1/chat/completions' -d '{ "model": "claude-opus-4-5", "messages": [{"role": "user", "content": "Say hello in French"}] }'
+
 # bedrock anthropic text completion
 #call POST 'v1/chat/completions' -d '{ "model": "anthropic.claude-3-5-haiku-20241022-v1:0", "messages": [{"role": "user", "content": "Say hello in Japanese"}] }'
 
