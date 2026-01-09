@@ -91,5 +91,38 @@
         "meterTimeInMillis": 1763041674153,
         "meterValue": 1,
         "uniqueId": "3caa2356-be19-45d3-9c7e-cdb73ee92d75"
+    },
+    {
+        "meterApiName": "aflo.object_metadata",
+        "dimensions": {
+            "type": "virtual_tag_dimension",
+            "meterName": "llm_api_call",
+            "dimension": "team",
+            "name": "team"
+        },
+        "meterTimeInMillis": 1763041674153,
+        "meterValue": 1
+    },
+    {
+        "meterApiName": "aflo.object_metadata",
+        "dimensions": {
+            "type": "virtual_tag_dimension",
+            "meterName": "llm_api_call_ms",
+            "dimension": "team",
+            "name": "team"
+        },
+        "meterTimeInMillis": 1763041674153,
+        "meterValue": 1
+    },
+    {
+        "meterApiName": "aflo.object_metadata",
+        "dimensions": {
+            "type": "virtual_tag_dimension",
+            "meterName": "llm_error_details",
+            "dimension": "team",
+            "name": "team"
+        },
+        "meterTimeInMillis": 1763041674153,
+        "meterValue": 1
     }
 ]

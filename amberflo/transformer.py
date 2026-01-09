@@ -97,7 +97,7 @@ def extract_events_from_log(log, send_metadata=_send_metadata, hosted_env=_hoste
         "uniqueId": request_id,
     }
 
-    events = metadata_events + [
+    usage_events = [
         {
             **base_event,
             "meterApiName": "llm_api_call",
@@ -121,7 +121,7 @@ def extract_events_from_log(log, send_metadata=_send_metadata, hosted_env=_hoste
     ]
 
     for unit, quantity, in_out, cache in usage:
-        events.append(
+        usage_events.append(
             {
                 **base_event,
                 "meterApiName": _get_meter_name(unit),
@@ -136,7 +136,7 @@ def extract_events_from_log(log, send_metadata=_send_metadata, hosted_env=_hoste
         )
 
     if error_details:
-        events.append(
+        usage_events.append(
             {
                 **base_event,
                 "meterApiName": "llm_error_details",
@@ -145,8 +145,7 @@ def extract_events_from_log(log, send_metadata=_send_metadata, hosted_env=_hoste
             }
         )
 
-    return events
-
+    return metadata_events + usage_events + _generate_virtual_tag_dimension_events(usage_events, request_time_ms)
 
 def _resolve_region(platform, log):
     if platform == "bedrock":
@@ -157,6 +156,32 @@ def _resolve_region(platform, log):
         return _get_api_base_domain_part(log, 0)
 
     return None
+
+
+def _generate_virtual_tag_dimension_events(usage_events, request_time_ms):
+    seen_meter_names = set()
+    virtual_tag_dimension_mapping_events = []
+
+    for event in usage_events:
+        meter_name = event.get("meterApiName")
+
+        # currently we map only the dimension "team"
+        # thus we send only a single mapping event per meter
+        if meter_name not in seen_meter_names:
+            seen_meter_names.add(meter_name)
+            virtual_tag_dimension_mapping_events.append({
+                "meterApiName": "aflo.object_metadata",
+                "meterValue": 1,
+                "meterTimeInMillis": request_time_ms,
+                "dimensions": {
+                    "type": "virtual_tag_dimension",
+                    "meterName": meter_name,
+                    "dimension": "team",
+                    "name": "team"
+                },
+            })
+
+    return virtual_tag_dimension_mapping_events
 
 
 def _get_bu_and_team(metadata):
