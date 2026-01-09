@@ -145,7 +145,12 @@ def extract_events_from_log(log, send_metadata=_send_metadata, hosted_env=_hoste
             }
         )
 
-    return metadata_events + usage_events + _generate_virtual_tag_dimension_events(usage_events, request_time_ms)
+    return (
+        metadata_events
+        + usage_events
+        + _generate_virtual_tag_dimension_events(usage_events, request_time_ms)
+    )
+
 
 def _resolve_region(platform, log):
     if platform == "bedrock":
@@ -169,17 +174,19 @@ def _generate_virtual_tag_dimension_events(usage_events, request_time_ms):
         # thus we send only a single mapping event per meter
         if meter_name not in seen_meter_names:
             seen_meter_names.add(meter_name)
-            virtual_tag_dimension_mapping_events.append({
-                "meterApiName": "aflo.object_metadata",
-                "meterValue": 1,
-                "meterTimeInMillis": request_time_ms,
-                "dimensions": {
-                    "type": "virtual_tag_dimension",
-                    "meterName": meter_name,
-                    "dimension": "team",
-                    "name": "team"
-                },
-            })
+            virtual_tag_dimension_mapping_events.append(
+                {
+                    "meterApiName": "aflo.object_metadata",
+                    "meterValue": 1,
+                    "meterTimeInMillis": request_time_ms,
+                    "dimensions": {
+                        "type": "virtual_tag_dimension",
+                        "meterName": meter_name,
+                        "dimension": "team",
+                        "name": "team",
+                    },
+                }
+            )
 
     return virtual_tag_dimension_mapping_events
 
