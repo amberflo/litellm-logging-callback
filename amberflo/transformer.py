@@ -164,31 +164,22 @@ def _resolve_region(platform, log):
 
 
 def _generate_virtual_tag_dimension_events(usage_events, request_time_ms):
-    seen_meter_names = set()
-    virtual_tag_dimension_mapping_events = []
+    meter_api_names = set(event.get("meterApiName") for event in usage_events)
 
-    for event in usage_events:
-        meter_name = event.get("meterApiName")
-
-        # currently we map only the dimension "team"
-        # thus we send only a single mapping event per meter
-        if meter_name not in seen_meter_names:
-            seen_meter_names.add(meter_name)
-            virtual_tag_dimension_mapping_events.append(
-                {
-                    "meterApiName": "aflo.object_metadata",
-                    "meterValue": 1,
-                    "meterTimeInMillis": request_time_ms,
-                    "dimensions": {
-                        "type": "virtual_tag_dimension",
-                        "meterName": meter_name,
-                        "dimension": "team",
-                        "name": "team",
-                    },
-                }
-            )
-
-    return virtual_tag_dimension_mapping_events
+    return [
+        {
+            "meterApiName": "aflo.object_metadata",
+            "meterValue": 1,
+            "meterTimeInMillis": request_time_ms,
+            "dimensions": {
+                "type": "virtual_tag_dimension",
+                "meterName": meter_name,
+                "dimension": "team",
+                "name": "team",
+            },
+        }
+        for meter_name in sorted(meter_api_names)
+    ]
 
 
 def _get_bu_and_team(metadata):

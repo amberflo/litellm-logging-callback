@@ -143,7 +143,7 @@
         "meterApiName": "aflo.object_metadata",
         "dimensions": {
             "type": "virtual_tag_dimension",
-            "meterName": "llm_text_tokens",
+            "meterName": "llm_image_tokens",
             "dimension": "team",
             "name": "team"
         },
@@ -165,7 +165,7 @@
         "meterApiName": "aflo.object_metadata",
         "dimensions": {
             "type": "virtual_tag_dimension",
-            "meterName": "llm_image_tokens",
+            "meterName": "llm_text_tokens",
             "dimension": "team",
             "name": "team"
         },
