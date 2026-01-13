@@ -97,7 +97,7 @@ def extract_events_from_log(log, send_metadata=_send_metadata, hosted_env=_hoste
         "uniqueId": request_id,
     }
 
-    events = metadata_events + [
+    usage_events = [
         {
             **base_event,
             "meterApiName": "llm_api_call",
@@ -121,7 +121,7 @@ def extract_events_from_log(log, send_metadata=_send_metadata, hosted_env=_hoste
     ]
 
     for unit, quantity, in_out, cache in usage:
-        events.append(
+        usage_events.append(
             {
                 **base_event,
                 "meterApiName": _get_meter_name(unit),
@@ -136,7 +136,7 @@ def extract_events_from_log(log, send_metadata=_send_metadata, hosted_env=_hoste
         )
 
     if error_details:
-        events.append(
+        usage_events.append(
             {
                 **base_event,
                 "meterApiName": "llm_error_details",
@@ -145,7 +145,11 @@ def extract_events_from_log(log, send_metadata=_send_metadata, hosted_env=_hoste
             }
         )
 
-    return events
+    return (
+        metadata_events
+        + usage_events
+        + _generate_virtual_tag_dimension_events(usage_events, request_time_ms)
+    )
 
 
 def _resolve_region(platform, log):
@@ -157,6 +161,25 @@ def _resolve_region(platform, log):
         return _get_api_base_domain_part(log, 0)
 
     return None
+
+
+def _generate_virtual_tag_dimension_events(usage_events, request_time_ms):
+    meter_api_names = set(event.get("meterApiName") for event in usage_events)
+
+    return [
+        {
+            "meterApiName": "aflo.object_metadata",
+            "meterValue": 1,
+            "meterTimeInMillis": request_time_ms,
+            "dimensions": {
+                "type": "virtual_tag_dimension",
+                "meterName": meter_name,
+                "dimension": "team",
+                "name": "team",
+            },
+        }
+        for meter_name in sorted(meter_api_names)
+    ]
 
 
 def _get_bu_and_team(metadata):
